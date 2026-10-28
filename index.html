@@ -3,29 +3,26 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta
-      name="description"
-      content="Naveed Ahmad — Graphic Designer and Computer Educator in Lahore, Pakistan."
-    />
-    <title>Naveed Ahmad | Graphic Designer & Computer Educator</title>
+    <meta name="description" content="Naveed Ahmad — Creative designer and computer educator based in Lahore, Pakistan." />
+    <title>Naveed Ahmad | Creative Designer & Computer Educator</title>
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Cormorant+Garamond:wght@500;600;700&display=swap");
 
       :root {
-        --bg: #f3efe8;
-        --bg-strong: #140f0c;
-        --bg-soft: #efe4d6;
-        --panel: rgba(255,255,255,0.46);
-        --panel-strong: rgba(255,255,255,0.72);
-        --ink: #1a120f;
-        --muted: #665d56;
-        --line: rgba(26,18,15,0.09);
-        --accent: #8a4737;
-        --accent-2: #c8945b;
-        --gold: #d7b07a;
-        --gold-soft: #f1e2c5;
-        --shadow: 0 30px 80px rgba(31, 20, 14, 0.18);
-        --card-shadow: 0 18px 42px rgba(26,18,15,0.08);
+        --bg: #f4efe8;
+        --bg-2: #e9dfd4;
+        --panel: rgba(255,255,255,0.56);
+        --panel-strong: rgba(255,255,255,0.74);
+        --ink: #171310;
+        --muted: #5d524d;
+        --line: rgba(23,19,16,0.08);
+        --accent: #a86148;
+        --accent-2: #c58f5b;
+        --gold: #d9b27a;
+        --charcoal: #12100d;
+        --charcoal-2: #271d1a;
+        --shadow: 0 30px 80px rgba(18, 12, 9, 0.12);
+        --card-shadow: 0 20px 44px rgba(18, 12, 9, 0.06);
         --radius-xl: 30px;
         --radius-lg: 22px;
         --radius-md: 16px;
@@ -37,11 +34,11 @@
       body {
         margin: 0;
         font-family: "Inter", Arial, sans-serif;
-        color: var(--ink);
         background:
-          radial-gradient(circle at top left, rgba(138,71,55,0.1), transparent 28%),
-          radial-gradient(circle at bottom right, rgba(215,176,122,0.12), transparent 26%),
-          linear-gradient(180deg, var(--bg) 0%, #f8f4ef 100%);
+          radial-gradient(circle at top left, rgba(168,97,72,0.08), transparent 26%),
+          radial-gradient(circle at bottom right, rgba(201,143,91,0.10), transparent 22%),
+          linear-gradient(180deg, var(--bg) 0%, #f9f5f1 100%);
+        color: var(--ink);
         line-height: 1.7;
         overflow-x: hidden;
       }
@@ -50,7 +47,7 @@
         content: "";
         position: fixed;
         inset: 0;
-        background-image: linear-gradient(rgba(255,255,255,0.18) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.12) 1px, transparent 1px);
+        background-image: linear-gradient(rgba(255,255,255,0.14) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.10) 1px, transparent 1px);
         background-size: 28px 28px;
         mask-image: radial-gradient(circle at center, black 32%, transparent 100%);
         pointer-events: none;
@@ -58,8 +55,8 @@
       }
 
       a { color: inherit; text-decoration: none; }
-      img { max-width: 100%; display: block; }
-      button { font: inherit; }
+      img { display: block; max-width: 100%; }
+      button, input, textarea { font: inherit; }
 
       .wrap {
         width: var(--container);
@@ -68,29 +65,23 @@
         z-index: 1;
       }
 
-      .topbar {
+      .site-header {
         position: sticky;
         top: 0;
         z-index: 30;
-        padding: 12px 0;
+        background: rgba(244, 239, 232, 0.76);
         backdrop-filter: blur(18px);
         -webkit-backdrop-filter: blur(18px);
-        background: rgba(243,239,232,0.54);
-        border-bottom: 1px solid rgba(26,18,15,0.04);
+        border-bottom: 1px solid rgba(23,19,16,0.04);
       }
 
-      .topbar-inner {
-        width: var(--container);
-        margin: 0 auto;
+      .header-inner {
         display: flex;
         align-items: center;
         justify-content: space-between;
         gap: 20px;
-        padding: 16px 22px;
-        background: rgba(255,255,255,0.34);
-        border: 1px solid rgba(255,255,255,0.68);
-        border-radius: 999px;
-        box-shadow: 0 10px 26px rgba(0,0,0,0.03);
+        min-height: 88px;
+        padding: 12px 0;
       }
 
       .brand {
@@ -102,53 +93,53 @@
         text-transform: uppercase;
       }
 
-      .monogram {
-        width: 44px;
-        height: 44px;
+      .brand-mark {
+        width: 42px;
+        height: 42px;
         display: grid;
         place-items: center;
         border-radius: 14px;
-        background: linear-gradient(135deg, #180f0b, #574539);
+        background: linear-gradient(135deg, #171310, #4d3b34);
         color: #fff;
-        font-size: 0.8rem;
-        box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), 0 14px 24px rgba(24,15,11,0.22);
+        font-size: 0.82rem;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), 0 14px 24px rgba(24,15,11,0.20);
         transform: rotate(-8deg);
       }
 
-      .brand-name {
+      .brand-text {
         display: block;
-        font-size: 0.76rem;
+        font-size: 0.75rem;
         letter-spacing: 0.12em;
       }
 
       .brand-sub {
         display: block;
+        color: var(--muted);
         font-size: 0.54rem;
         letter-spacing: 0.18em;
-        color: var(--muted);
       }
 
       .nav {
         display: flex;
         align-items: center;
-        gap: 24px;
+        gap: 26px;
+        color: var(--muted);
         font-size: 0.7rem;
         letter-spacing: 0.14em;
         text-transform: uppercase;
-        color: var(--muted);
       }
 
       .nav a {
         position: relative;
-        padding-bottom: 3px;
+        padding-bottom: 2px;
       }
 
       .nav a::after {
         content: "";
         position: absolute;
         left: 0;
+        right: 0;
         bottom: 0;
-        width: 100%;
         height: 2px;
         background: linear-gradient(90deg, var(--accent), transparent);
         transform: scaleX(0);
@@ -159,92 +150,80 @@
       .nav a:hover::after,
       .nav a:focus-visible::after { transform: scaleX(1); }
 
-      .cta {
+      .header-cta {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        gap: 10px;
+        min-height: 46px;
+        padding: 0 20px;
         border-radius: 999px;
-        background: linear-gradient(135deg, rgba(255,255,255,0.85), rgba(255,255,255,0.46));
-        border: 1px solid rgba(26,18,15,0.08);
+        background: rgba(255,255,255,0.54);
+        border: 1px solid rgba(23,19,16,0.09);
         color: var(--ink);
-        padding: 13px 22px;
-        font-size: 0.70rem;
+        font-size: 0.68rem;
         font-weight: 700;
         letter-spacing: 0.12em;
         text-transform: uppercase;
-        box-shadow: 0 20px 28px rgba(26,18,15,0.05);
+        box-shadow: 0 10px 18px rgba(18,12,9,0.04);
         transition: transform 0.25s ease, box-shadow 0.25s ease;
       }
 
-      .cta:hover {
+      .header-cta:hover {
         transform: translateY(-2px);
-        box-shadow: 0 18px 26px rgba(26,18,15,0.08);
-      }
-
-      main {
-        position: relative;
-        z-index: 1;
+        box-shadow: 0 16px 24px rgba(18,12,9,0.06);
       }
 
       .hero {
-        display: grid;
-        grid-template-columns: 1.12fr 0.88fr;
-        align-items: center;
-        gap: 42px;
-        min-height: 760px;
-        padding: 54px 0 80px;
+        padding: 56px 0 74px;
       }
 
-      .hero-copy {
-        position: relative;
+      .hero-inner {
+        display: grid;
+        grid-template-columns: 1.12fr 0.88fr;
+        gap: 42px;
+        align-items: center;
       }
 
       .eyebrow {
         display: inline-block;
         margin-bottom: 18px;
+        color: var(--muted);
         font-size: 0.72rem;
         font-weight: 700;
         letter-spacing: 0.18em;
         text-transform: uppercase;
-        color: var(--muted);
       }
 
       .hero h1 {
         margin: 0;
-        font-size: clamp(4rem, 7vw, 7.3rem);
-        line-height: 0.92;
+        font-size: clamp(3.5rem, 6vw, 6.5rem);
+        line-height: 0.93;
         letter-spacing: -0.07em;
         font-weight: 800;
       }
 
-      .hero h1 .name-block {
+      .hero h1 .highlight {
         display: block;
-      }
-
-      .hero h1 .accent {
-        display: inline-block;
         color: var(--accent);
-        position: relative;
       }
 
-      .hero h1 .accent::after {
+      .hero h1 .highlight::after {
         content: "";
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 8px;
-        height: 18px;
-        background: linear-gradient(90deg, rgba(138,71,55,0.14), rgba(215,176,122,0.12), transparent);
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        height: 16px;
+        background: linear-gradient(90deg, rgba(168,97,72,0.18), rgba(217,178,122,0.12), transparent);
+        border-radius: 999px;
+        margin-top: -18px;
         z-index: -1;
       }
 
-      .hero .lead {
-        max-width: 650px;
-        margin-top: 24px;
-        font-size: 1.14rem;
-        line-height: 1.8;
-        color: rgba(26,18,15,0.8);
+      .hero-copy p {
+        max-width: 620px;
+        margin: 22px 0 0;
+        color: rgba(23,19,16,0.78);
+        font-size: 1.08rem;
       }
 
       .hero-actions {
@@ -252,106 +231,89 @@
         flex-wrap: wrap;
         align-items: center;
         gap: 18px;
-        margin-top: 36px;
+        margin-top: 32px;
       }
 
-      .button-primary,
-      .button-secondary {
+      .btn {
         display: inline-flex;
         align-items: center;
         justify-content: center;
         min-height: 54px;
         padding: 0 26px;
         border-radius: 999px;
-        font-size: 0.72rem;
+        font-size: 0.7rem;
         font-weight: 700;
         letter-spacing: 0.14em;
         text-transform: uppercase;
         transition: transform 0.25s ease, box-shadow 0.25s ease;
       }
 
-      .button-primary {
-        background: linear-gradient(135deg, var(--ink), #40332d);
-        color: white;
-        box-shadow: 0 16px 28px rgba(26,18,15,0.18);
+      .btn.primary {
+        background: linear-gradient(135deg, var(--charcoal), #3a2e29);
+        color: #fff;
+        box-shadow: 0 18px 30px rgba(18,12,9,0.18);
       }
 
-      .button-secondary {
+      .btn.secondary {
         background: rgba(255,255,255,0.52);
-        border: 1px solid rgba(26,18,15,0.08);
+        border: 1px solid rgba(23,19,16,0.08);
         color: var(--ink);
       }
 
-      .button-primary:hover,
-      .button-secondary:hover {
+      .btn:hover {
         transform: translateY(-2px);
       }
 
-      .mini-stats {
+      .hero-meta {
         display: flex;
         flex-wrap: wrap;
         gap: 18px;
-        margin-top: 34px;
+        margin-top: 28px;
       }
 
-      .mini-stat {
-        min-width: 140px;
-        padding: 20px 18px;
-        border: 1px solid var(--line);
-        border-radius: 18px;
+      .meta-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        min-height: 54px;
+        padding: 0 18px;
+        border-radius: 999px;
         background: rgba(255,255,255,0.42);
-        box-shadow: 0 16px 28px rgba(32,22,18,0.04);
-      }
-
-      .mini-stat strong {
-        display: block;
-        font-size: 1.7rem;
-        line-height: 1;
-        margin-bottom: 6px;
-      }
-
-      .mini-stat span {
+        border: 1px solid rgba(23,19,16,0.06);
         color: var(--muted);
-        font-size: 0.72rem;
-        text-transform: uppercase;
+        font-size: 0.7rem;
         letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .meta-pill strong {
+        color: var(--ink);
       }
 
       .hero-visual {
         position: relative;
-        perspective: 1200px;
       }
 
-      .showcase-shell {
+      .feature-card {
         position: relative;
-        padding: 20px;
+        min-height: 620px;
         border-radius: 34px;
-        background: linear-gradient(135deg, rgba(255,255,255,0.7), rgba(255,255,255,0.2));
-        border: 1px solid rgba(255,255,255,0.8);
-        box-shadow: var(--shadow), inset 0 1px 0 rgba(255,255,255,0.7);
-        transform-style: preserve-3d;
-      }
-
-      .showcase-card {
-        position: relative;
-        min-height: 600px;
-        border-radius: 30px;
+        background: linear-gradient(135deg, rgba(16,12,10,0.96), rgba(52,39,33,0.94));
+        box-shadow: var(--shadow);
         overflow: hidden;
-        background: linear-gradient(135deg, rgba(17,12,10,0.96), rgba(79,52,39,0.94));
-        transform: translateZ(30px);
       }
 
-      .showcase-card::before {
+      .feature-card::before {
         content: "";
         position: absolute;
         inset: 0;
         background:
           linear-gradient(135deg, rgba(255,255,255,0.14), transparent 28%),
-          radial-gradient(circle at 80% 18%, rgba(215,176,122,0.5), transparent 26%),
-          radial-gradient(circle at 72% 82%, rgba(138,71,55,0.42), transparent 26%);
+          radial-gradient(circle at 76% 16%, rgba(217,178,122,0.46), transparent 24%),
+          radial-gradient(circle at 68% 82%, rgba(168,97,72,0.42), transparent 28%);
       }
 
-      .showcase-grid {
+      .feature-grid {
         position: absolute;
         inset: 0;
         background:
@@ -359,18 +321,18 @@
           repeating-linear-gradient(135deg, rgba(255,255,255,0.03) 0, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 12px);
       }
 
-      .showcase-body {
+      .feature-content {
         position: relative;
         z-index: 1;
-        padding: 28px 26px 22px;
+        height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        min-height: 100%;
-        color: rgba(255,255,255,0.94);
+        padding: 28px 26px 24px;
+        color: rgba(255,255,255,0.93);
       }
 
-      .showcase-header {
+      .feature-top {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -397,84 +359,82 @@
       .dot:nth-child(2) { background: #d18d75; }
       .dot:nth-child(3) { background: #8a8d92; }
 
-      .showcase-brand {
-        margin-top: 26px;
+      .feature-brand {
+        margin-top: 24px;
       }
 
-      .showcase-brand strong {
+      .feature-brand strong {
         display: block;
-        font-size: clamp(2.5rem, 3vw, 3.5rem);
+        font-size: clamp(2.3rem, 3vw, 3.2rem);
+        line-height: 0.95;
         letter-spacing: -0.07em;
-        line-height: 0.9;
-        margin-bottom: 12px;
       }
 
-      .showcase-brand p {
-        max-width: 300px;
-        margin: 0;
-        color: rgba(255,255,255,0.7);
+      .feature-brand p {
+        max-width: 260px;
+        margin: 12px 0 0;
+        color: rgba(255,255,255,0.72);
         font-size: 0.8rem;
         letter-spacing: 0.1em;
         text-transform: uppercase;
       }
 
-      .showcase-badges {
+      .badge-row {
         display: flex;
         flex-wrap: wrap;
         gap: 10px;
         margin-top: 18px;
       }
 
-      .showcase-badges span {
-        border: 1px solid rgba(255,255,255,0.14);
-        background: rgba(255,255,255,0.08);
+      .badge {
+        display: inline-block;
         padding: 8px 12px;
         border-radius: 999px;
+        border: 1px solid rgba(255,255,255,0.12);
+        background: rgba(255,255,255,0.06);
         font-size: 0.62rem;
-        letter-spacing: 0.14em;
+        letter-spacing: 0.12em;
         text-transform: uppercase;
       }
 
-      .floating-panel {
-        position: absolute;
-        right: -12px;
-        bottom: 28px;
-        width: 246px;
-        padding: 18px 18px 14px;
+      .feature-stat {
+        align-self: flex-end;
+        width: min(260px, 78%);
+        padding: 18px 18px 16px;
         border-radius: 22px;
-        background: rgba(255,255,255,0.12);
-        border: 1px solid rgba(255,255,255,0.18);
-        backdrop-filter: blur(10px);
-        box-shadow: 0 20px 38px rgba(0,0,0,0.16);
-        transform: rotate(8deg) translateZ(40px);
+        background: rgba(255,255,255,0.08);
+        border: 1px solid rgba(255,255,255,0.14);
+        backdrop-filter: blur(12px);
+        box-shadow: 0 22px 38px rgba(0,0,0,0.14);
+        transform: rotate(7deg);
       }
 
-      .floating-panel .label {
+      .feature-stat .label {
         display: block;
         margin-bottom: 8px;
+        color: rgba(255,255,255,0.7);
         font-size: 0.62rem;
-        letter-spacing: 0.18em;
+        letter-spacing: 0.16em;
         text-transform: uppercase;
-        opacity: 0.7;
       }
 
-      .floating-panel .meta {
+      .feature-stat .meta {
         display: flex;
         align-items: end;
         justify-content: space-between;
         gap: 12px;
       }
 
-      .floating-panel strong {
+      .feature-stat strong {
         font-size: 2.2rem;
         letter-spacing: -0.06em;
       }
 
-      .floating-panel span {
-        font-size: 0.7rem;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
+      .feature-stat span {
         color: rgba(255,255,255,0.64);
+        font-size: 0.68rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
       }
 
       .orb {
@@ -483,32 +443,31 @@
         height: 220px;
         border-radius: 50%;
         filter: blur(6px);
-        background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.96), rgba(215,176,122,0.54) 18%, transparent 40%), rgba(255,255,255,0.05);
-        right: -40px;
-        top: 44px;
-        transform: translateZ(50px);
+        background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.96), rgba(217,178,122,0.52) 18%, transparent 40%), rgba(255,255,255,0.04);
+        right: -26px;
+        top: 48px;
         animation: floatOrb 7s ease-in-out infinite alternate;
       }
 
       .section {
-        padding: 70px 0;
+        padding: 76px 0;
       }
 
       .section-head {
         display: flex;
-        justify-content: space-between;
         align-items: end;
-        gap: 18px;
-        margin-bottom: 34px;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 32px;
       }
 
-      .section-number {
+      .section-kicker {
         display: block;
-        font-size: 0.72rem;
+        color: var(--muted);
+        font-size: 0.7rem;
         font-weight: 700;
         letter-spacing: 0.18em;
         text-transform: uppercase;
-        color: var(--muted);
       }
 
       .section-head h2 {
@@ -519,33 +478,79 @@
       }
 
       .section-link {
+        color: var(--muted);
         font-size: 0.7rem;
         letter-spacing: 0.12em;
         text-transform: uppercase;
+      }
+
+      .services-grid,
+      .work-grid,
+      .skills-grid {
+        display: grid;
+        gap: 22px;
+      }
+
+      .services-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .work-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .skills-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+      .service-card,
+      .project-card,
+      .skill-card {
+        background: rgba(255,255,255,0.38);
+        border: 1px solid rgba(23,19,16,0.06);
+        border-radius: 26px;
+        box-shadow: var(--card-shadow);
+      }
+
+      .service-card {
+        padding: 24px 22px;
+      }
+
+      .service-card .icon {
+        width: 52px;
+        height: 52px;
+        display: grid;
+        place-items: center;
+        border-radius: 16px;
+        margin-bottom: 18px;
+        background: linear-gradient(135deg, rgba(168,97,72,0.12), rgba(217,178,122,0.12));
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.25);
+        font-size: 1.3rem;
+      }
+
+      .service-card h3,
+      .skill-card h3 {
+        margin: 0 0 10px;
+        font-size: 1.18rem;
+        letter-spacing: -0.04em;
+      }
+
+      .service-card p,
+      .project-card p,
+      .skill-card li,
+      .about-copy p,
+      .timeline-copy p {
         color: var(--muted);
       }
 
-      .work-grid {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 24px;
+      .service-card p {
+        margin: 0;
       }
 
       .project-card {
         position: relative;
         width: 100%;
         padding: 18px;
-        border: 1px solid rgba(26,18,15,0.06);
-        border-radius: var(--radius-xl);
-        background: rgba(255,255,255,0.38);
-        box-shadow: var(--card-shadow);
-        cursor: pointer;
         text-align: left;
-        transition: transform 0.35s ease, box-shadow 0.35s ease;
+        cursor: pointer;
+        transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
       }
 
       .project-card:hover {
-        transform: translateY(-8px) rotateX(4deg);
+        transform: translateY(-8px);
+        border-color: rgba(168,97,72,0.18);
         box-shadow: 0 28px 48px rgba(34,22,15,0.08);
       }
 
@@ -555,7 +560,6 @@
         border-radius: 22px;
         overflow: hidden;
         margin-bottom: 18px;
-        background: linear-gradient(135deg, #100d0d, #3f2b29 50%, #9d765f);
       }
 
       .project-visual::before {
@@ -564,25 +568,25 @@
         left: 18px;
         right: 18px;
         bottom: 16px;
+        color: rgba(255,255,255,0.94);
         font-weight: 800;
         font-size: clamp(1.8rem, 3vw, 2.6rem);
         letter-spacing: -0.06em;
-        color: rgba(255,255,255,0.93);
       }
 
       .project-visual::after {
         content: "";
         position: absolute;
         inset: 0;
-        background: linear-gradient(135deg, rgba(255,255,255,0.16), transparent 28%, rgba(0,0,0,0.12));
+        background: linear-gradient(135deg, rgba(255,255,255,0.14), transparent 28%, rgba(0,0,0,0.12));
       }
 
       .project-card:nth-child(1) .project-visual {
-        background: radial-gradient(circle at 25% 15%, #ffcab2, transparent 18%), linear-gradient(135deg, #171615 0%, #2a1d1c 40%, #9a5339 100%);
+        background: radial-gradient(circle at 25% 15%, rgba(255,202,178,0.9), transparent 18%), linear-gradient(135deg, #171615 0%, #2a1d1c 40%, #9a5339 100%);
       }
 
       .project-card:nth-child(2) .project-visual {
-        background: radial-gradient(circle at 70% 18%, rgba(255,230,145,0.55), transparent 22%), linear-gradient(135deg, #0f1b22 0%, #1e2d30 35%, #708768 100%);
+        background: radial-gradient(circle at 72% 18%, rgba(255,230,145,0.55), transparent 22%), linear-gradient(135deg, #0f1b22 0%, #1e2d30 35%, #708768 100%);
       }
 
       .project-card:nth-child(3) .project-visual {
@@ -597,53 +601,52 @@
         margin-bottom: 10px;
       }
 
-      .project-kicker {
-        font-size: 0.62rem;
-        letter-spacing: 0.16em;
-        text-transform: uppercase;
-        color: var(--muted);
-      }
-
       .project-tag {
-        border: 1px solid rgba(26,18,15,0.08);
+        border: 1px solid rgba(23,19,16,0.08);
         border-radius: 999px;
         padding: 8px 10px;
+        background: rgba(255,255,255,0.64);
         font-size: 0.6rem;
         font-weight: 700;
         letter-spacing: 0.12em;
         text-transform: uppercase;
-        background: rgba(255,255,255,0.68);
+      }
+
+      .project-kicker {
+        color: var(--muted);
+        font-size: 0.62rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
       }
 
       .project-card h3 {
         margin: 0 0 8px;
-        font-size: 1.48rem;
+        font-size: 1.5rem;
         letter-spacing: -0.04em;
       }
 
       .project-card p {
         margin: 0;
-        color: var(--muted);
       }
 
-      .profile-layout {
+      .about-layout {
         display: grid;
         grid-template-columns: 0.9fr 1.1fr;
         gap: 28px;
         align-items: center;
       }
 
-      .profile-panel {
+      .about-panel {
         position: relative;
         min-height: 420px;
-        padding: 34px 28px 28px;
+        padding: 32px 28px 26px;
         border-radius: 32px;
         background: linear-gradient(135deg, rgba(255,255,255,0.62), rgba(255,255,255,0.38));
-        border: 1px solid rgba(29,26,26,0.06);
+        border: 1px solid rgba(23,19,16,0.06);
         box-shadow: 0 22px 42px rgba(24,20,17,0.04);
       }
 
-      .profile-panel::before {
+      .about-panel::before {
         content: "";
         position: absolute;
         width: 180px;
@@ -651,141 +654,122 @@
         right: 30px;
         top: 20px;
         border-radius: 50%;
-        background: radial-gradient(circle at 30% 30%, rgba(138,71,55,0.2), transparent 60%);
+        background: radial-gradient(circle at 30% 30%, rgba(168,97,72,0.18), transparent 60%);
       }
 
-      .profile-panel .quote {
+      .quote {
         position: relative;
         z-index: 1;
+        margin: 0;
         font-family: "Cormorant Garamond", serif;
         font-size: clamp(2.8rem, 4vw, 4.2rem);
         line-height: 0.9;
         letter-spacing: -0.04em;
-        margin: 0 0 20px;
       }
 
-      .profile-panel .quote small {
+      .quote small {
         display: block;
         margin-top: 12px;
         font-family: "Inter", sans-serif;
+        color: var(--muted);
         font-size: 0.72rem;
         letter-spacing: 0.18em;
         text-transform: uppercase;
-        color: var(--muted);
       }
 
-      .profile-figure {
+      .mini-metrics {
         display: grid;
         grid-template-columns: repeat(2, minmax(0,1fr));
         gap: 18px;
-        margin-top: 20px;
+        margin-top: 22px;
       }
 
-      .profile-box {
-        padding: 20px;
+      .mini-metric {
+        padding: 18px 20px;
         border-radius: 20px;
-        background: rgba(31,26,24,0.03);
-        border: 1px solid rgba(29,26,26,0.05);
+        background: rgba(23,19,16,0.02);
+        border: 1px solid rgba(23,19,16,0.05);
       }
 
-      .profile-box strong {
+      .mini-metric strong {
         display: block;
-        font-size: 2.1rem;
+        font-size: 2rem;
         line-height: 1;
         margin-bottom: 8px;
       }
 
-      .profile-box span {
+      .mini-metric span {
         color: var(--muted);
-        font-size: 0.7rem;
+        font-size: 0.68rem;
         letter-spacing: 0.12em;
         text-transform: uppercase;
       }
 
-      .profile-copy {
-        font-size: 1.12rem;
-        color: rgba(29,26,26,0.8);
-        padding-left: 16px;
+      .about-copy {
+        font-size: 1.08rem;
       }
 
-      .timeline {
+      .about-copy p {
+        margin: 0 0 16px;
+      }
+
+      .experience-list {
         display: grid;
         gap: 18px;
       }
 
-      .job {
+      .timeline-item {
         display: grid;
         grid-template-columns: 150px 1fr;
-        gap: 20px;
-        align-items: start;
+        gap: 24px;
         padding: 22px 24px;
         border-radius: 24px;
         background: rgba(255,255,255,0.34);
-        border: 1px solid rgba(29,26,26,0.06);
+        border: 1px solid rgba(23,19,16,0.06);
         box-shadow: 0 18px 26px rgba(33,18,11,0.04);
       }
 
-      .job-year {
+      .timeline-item .year {
+        color: var(--muted);
         font-size: 0.68rem;
+        font-weight: 700;
         letter-spacing: 0.18em;
         text-transform: uppercase;
-        font-weight: 700;
-        color: var(--muted);
       }
 
-      .job h3 {
-        margin: 0 0 10px;
-        font-size: 1.38rem;
+      .timeline-item h3 {
+        margin: 0 0 8px;
+        font-size: 1.42rem;
         letter-spacing: -0.04em;
       }
 
-      .job .company {
+      .timeline-company {
         display: inline-block;
-        margin-bottom: 10px;
+        margin-bottom: 8px;
+        color: var(--accent);
         font-weight: 700;
         letter-spacing: 0.08em;
         text-transform: uppercase;
-        color: var(--accent);
       }
 
-      .job p {
+      .timeline-copy p {
         margin: 0;
-        color: var(--muted);
-      }
-
-      .skills-grid {
-        display: grid;
-        grid-template-columns: repeat(4, minmax(0,1fr));
-        gap: 18px;
       }
 
       .skill-card {
         padding: 24px 20px 20px;
-        border-radius: 24px;
-        background: linear-gradient(135deg, rgba(255,255,255,0.64), rgba(255,255,255,0.36));
-        border: 1px solid rgba(29,26,26,0.06);
-        transition: transform 0.25s ease;
       }
 
-      .skill-card:hover {
-        transform: translateY(-6px);
-      }
-
-      .skill-card .skill-icon {
+      .skill-icon {
         width: 52px;
         height: 52px;
         display: grid;
         place-items: center;
         border-radius: 16px;
         margin-bottom: 18px;
-        font-size: 1.3rem;
-        background: linear-gradient(135deg, rgba(138,71,55,0.12), rgba(215,176,122,0.14));
-        box-shadow: inset 0 1px 0 rgba(255,255,255,0.35);
-      }
-
-      .skill-card h3 {
-        margin: 0 0 12px;
-        font-size: 1.1rem;
+        background: linear-gradient(135deg, rgba(168,97,72,0.12), rgba(217,178,122,0.14));
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.25);
+        font-size: 1.25rem;
       }
 
       .skill-card ul {
@@ -795,7 +779,6 @@
         display: grid;
         gap: 8px;
         color: var(--muted);
-        font-size: 0.95rem;
       }
 
       .skill-card li::before {
@@ -804,58 +787,25 @@
         margin-right: 8px;
       }
 
-      .education-grid {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0,1fr));
-        gap: 18px;
-      }
-
-      .edu-card {
-        padding: 24px 22px;
-        border-radius: 26px;
-        background: rgba(255,255,255,0.34);
-        border: 1px solid rgba(29,26,26,0.06);
-      }
-
-      .edu-card .degree {
-        display: inline-block;
-        margin-bottom: 10px;
-        font-size: 0.7rem;
-        letter-spacing: 0.18em;
-        text-transform: uppercase;
-        color: var(--muted);
-      }
-
-      .edu-card h3 {
-        margin: 0 0 8px;
-        font-size: 2rem;
-        letter-spacing: -0.06em;
-      }
-
-      .edu-card p {
-        margin: 0;
-        color: var(--muted);
-      }
-
-      .contact-wrapper {
+      .contact-wrap {
         position: relative;
-        padding: 40px 32px;
+        padding: 38px 32px;
         border-radius: 36px;
-        background: linear-gradient(135deg, rgba(27,22,19,0.96), rgba(61,42,32,0.96));
-        color: #f7f0ea;
+        background: linear-gradient(135deg, rgba(16,12,10,0.96), rgba(57,41,35,0.96));
+        color: #f5efe8;
         overflow: hidden;
-        box-shadow: 0 28px 50px rgba(20,12,9,0.2);
+        box-shadow: 0 30px 60px rgba(18,12,9,0.2);
       }
 
-      .contact-wrapper::before {
+      .contact-wrap::before {
         content: "";
         position: absolute;
         width: 260px;
         height: 260px;
-        right: -50px;
-        top: -50px;
+        right: -52px;
+        top: -52px;
         border-radius: 50%;
-        background: radial-gradient(circle, rgba(215,176,122,0.55), transparent 60%);
+        background: radial-gradient(circle, rgba(217,178,122,0.4), transparent 58%);
       }
 
       .contact-grid {
@@ -867,14 +817,14 @@
         align-items: center;
       }
 
-      .contact-wrapper h2 {
+      .contact-wrap h2 {
         margin: 0;
         font-size: clamp(2.5rem, 4vw, 4.2rem);
-        line-height: 0.95;
+        line-height: 0.96;
         letter-spacing: -0.07em;
       }
 
-      .contact-links {
+      .contact-list {
         display: grid;
         gap: 16px;
         justify-items: start;
@@ -883,9 +833,10 @@
       .contact-link {
         display: inline-flex;
         align-items: center;
-        gap: 10px;
+        justify-content: center;
         min-width: 220px;
-        padding: 18px 22px;
+        min-height: 54px;
+        padding: 0 22px;
         border-radius: 18px;
         background: rgba(255,255,255,0.06);
         border: 1px solid rgba(255,255,255,0.12);
@@ -893,7 +844,7 @@
       }
 
       footer {
-        padding: 24px 0 48px;
+        padding: 24px 12px 46px;
         color: var(--muted);
         text-align: center;
         font-size: 0.7rem;
@@ -904,41 +855,35 @@
       .zip-overlay {
         position: fixed;
         inset: 0;
-        z-index: 60;
-        pointer-events: none;
+        z-index: 50;
+        display: grid;
+        place-items: center;
         opacity: 0;
-        transition: opacity 0.35s ease;
+        visibility: hidden;
+        transition: opacity 0.35s ease, visibility 0.35s ease;
       }
 
-      .zip-overlay.is-open {
+      .zip-overlay.open {
         opacity: 1;
-        pointer-events: auto;
+        visibility: visible;
       }
 
       .zip-backdrop {
         position: absolute;
         inset: 0;
-        background: rgba(14, 10, 8, 0.68);
-        backdrop-filter: blur(8px);
-        -webkit-backdrop-filter: blur(8px);
-      }
-
-      .zip-scene {
-        position: absolute;
-        inset: 0;
-        display: grid;
-        place-items: center;
-        padding: 4vw;
+        background: rgba(10, 8, 7, 0.72);
+        backdrop-filter: blur(7px);
+        -webkit-backdrop-filter: blur(7px);
       }
 
       .zip-panel {
         position: relative;
-        width: min(1100px, 100%);
+        width: min(1100px, calc(100% - 32px));
         height: min(700px, 82vh);
         border-radius: 34px;
         overflow: hidden;
         background: linear-gradient(135deg, #120d0b, #342822 45%, #a86d4d 100%);
-        box-shadow: 0 30px 90px rgba(0,0,0,0.28);
+        box-shadow: 0 32px 90px rgba(0,0,0,0.3);
       }
 
       .zip-panel::before {
@@ -947,8 +892,8 @@
         inset: 0;
         background:
           linear-gradient(135deg, rgba(255,255,255,0.16), transparent 26%),
-          radial-gradient(circle at 80% 15%, rgba(215,176,122,0.38), transparent 26%),
-          radial-gradient(circle at 26% 70%, rgba(138,71,55,0.32), transparent 28%);
+          radial-gradient(circle at 80% 20%, rgba(217,178,122,0.36), transparent 26%),
+          radial-gradient(circle at 26% 72%, rgba(168,97,72,0.32), transparent 28%);
       }
 
       .zip-half {
@@ -956,27 +901,24 @@
         top: 0;
         bottom: 0;
         width: 50%;
-        transition: transform 0.88s cubic-bezier(0.2, 0.8, 0.2, 1);
-        background: linear-gradient(135deg, rgba(255,255,255,0.06), rgba(0,0,0,0.18));
+        transition: transform 0.9s cubic-bezier(0.2, 0.8, 0.2, 1);
+        background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(0,0,0,0.22));
       }
 
       .zip-half.left {
         left: 0;
+        transform: translateX(-106%);
         border-right: 1px solid rgba(255,255,255,0.12);
-        transform: translateX(-105%);
       }
 
       .zip-half.right {
         right: 0;
+        transform: translateX(106%);
         border-left: 1px solid rgba(255,255,255,0.12);
-        transform: translateX(105%);
       }
 
-      .zip-overlay.is-open .zip-half.left {
-        transform: translateX(0);
-      }
-
-      .zip-overlay.is-open .zip-half.right {
+      .zip-overlay.open .zip-half.left,
+      .zip-overlay.open .zip-half.right {
         transform: translateX(0);
       }
 
@@ -984,7 +926,7 @@
         content: "";
         position: absolute;
         inset: 0;
-        background: linear-gradient(90deg, rgba(255,255,255,0.12) 0, rgba(255,255,255,0.02) 30%, transparent 100%);
+        background: linear-gradient(90deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.02) 32%, transparent 100%);
       }
 
       .zip-half.left::after,
@@ -993,7 +935,7 @@
         position: absolute;
         top: 0;
         bottom: 0;
-        width: 14px;
+        width: 12px;
         background: repeating-linear-gradient(
           to bottom,
           rgba(255,255,255,0.22) 0,
@@ -1001,16 +943,10 @@
           rgba(255,255,255,0.08) 11px,
           rgba(255,255,255,0.08) 18px
         );
-        box-shadow: 0 0 18px rgba(255,255,255,0.16);
       }
 
-      .zip-half.left::after {
-        right: -7px;
-      }
-
-      .zip-half.right::after {
-        left: -7px;
-      }
+      .zip-half.left::after { right: -6px; }
+      .zip-half.right::after { left: -6px; }
 
       .zip-content {
         position: absolute;
@@ -1018,15 +954,15 @@
         z-index: 2;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 30px;
         align-items: center;
+        gap: 30px;
         padding: 48px;
         opacity: 0;
-        transform: translateY(22px);
+        transform: translateY(16px);
         transition: opacity 0.45s ease 0.2s, transform 0.45s ease 0.2s;
       }
 
-      .zip-overlay.is-open .zip-content {
+      .zip-overlay.open .zip-content {
         opacity: 1;
         transform: translateY(0);
       }
@@ -1042,21 +978,21 @@
       .zip-copy h3 {
         margin: 0 0 16px;
         font-size: clamp(2.8rem, 5vw, 5rem);
-        letter-spacing: -0.06em;
         line-height: 0.9;
+        letter-spacing: -0.06em;
       }
 
       .zip-copy p {
         margin: 0 0 20px;
         max-width: 500px;
         color: rgba(255,255,255,0.76);
-        font-size: 1.05rem;
+        font-size: 1.04rem;
       }
 
       .zip-list {
         list-style: none;
-        margin: 0;
         padding: 0;
+        margin: 0;
         display: grid;
         gap: 10px;
         color: rgba(255,255,255,0.8);
@@ -1070,12 +1006,11 @@
 
       .zip-visual {
         position: relative;
-        min-height: 520px;
+        min-height: 510px;
         border-radius: 28px;
         overflow: hidden;
-        background: linear-gradient(135deg, rgba(15,11,10,0.7), rgba(77,52,46,0.8));
         border: 1px solid rgba(255,255,255,0.12);
-        box-shadow: 0 20px 42px rgba(0,0,0,0.25);
+        box-shadow: 0 20px 48px rgba(0,0,0,0.18);
       }
 
       .zip-visual::before {
@@ -1083,42 +1018,40 @@
         position: absolute;
         inset: 0;
         background:
-          radial-gradient(circle at 25% 18%, rgba(255,206,154,0.48), transparent 18%),
-          radial-gradient(circle at 75% 52%, rgba(146,103,81,0.35), transparent 24%),
-          linear-gradient(135deg, rgba(255,255,255,0.1), transparent 30%);
+          radial-gradient(circle at 25% 18%, rgba(255,206,154,0.48), transparent 20%),
+          radial-gradient(circle at 78% 48%, rgba(146,103,81,0.34), transparent 24%),
+          linear-gradient(135deg, rgba(255,255,255,0.08), transparent 30%);
       }
 
       .zip-visual::after {
         content: "";
         position: absolute;
-        inset: 20px 18px 18px 18px;
-        border-radius: 22px;
-        border: 1px solid rgba(255,255,255,0.14);
+        inset: 18px 18px 18px 18px;
+        border-radius: 20px;
+        border: 1px solid rgba(255,255,255,0.12);
         background: rgba(255,255,255,0.04);
       }
 
-      .zip-visual .mini-screen {
+      .zip-screen {
         position: absolute;
         left: 32px;
         right: 32px;
         bottom: 32px;
         height: 170px;
-        border-radius: 20px;
+        border-radius: 18px;
         background: linear-gradient(135deg, rgba(20,15,12,0.82), rgba(45,34,28,0.82));
         border: 1px solid rgba(255,255,255,0.12);
-        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
       }
 
-      .zip-visual .mini-screen::before {
+      .zip-screen::before {
         content: "";
         position: absolute;
-        inset: 22px 20px 56px;
+        inset: 22px 20px 56px 20px;
         border-radius: 12px;
-        background: linear-gradient(90deg, rgba(215,176,122,0.9), rgba(138,71,55,0.8));
-        box-shadow: inset 0 1px 0 rgba(255,255,255,0.28);
+        background: linear-gradient(90deg, rgba(217,178,122,0.92), rgba(168,97,72,0.82));
       }
 
-      .zip-visual .mini-screen::after {
+      .zip-screen::after {
         content: "";
         position: absolute;
         left: 20px;
@@ -1130,68 +1063,55 @@
       }
 
       @keyframes floatOrb {
-        0% { transform: translate3d(0, 0, 50px) scale(0.96); }
-        100% { transform: translate3d(8px, -18px, 70px) scale(1.05); }
+        0% { transform: translate3d(0, 0, 20px) scale(0.96); }
+        100% { transform: translate3d(8px, -18px, 60px) scale(1.05); }
       }
 
       @media (max-width: 980px) {
-        .hero {
+        .hero-inner,
+        .about-layout,
+        .contact-grid {
           grid-template-columns: 1fr;
-          padding-top: 24px;
         }
 
-        .project-grid,
-        .skills-grid,
-        .education-grid,
-        .profile-layout,
-        .contact-grid,
-        .work-grid {
+        .services-grid,
+        .work-grid,
+        .skills-grid {
           grid-template-columns: 1fr 1fr;
         }
 
-        .nav {
-          display: none;
-        }
+        .nav { display: none; }
       }
 
       @media (max-width: 760px) {
-        .topbar-inner {
-          border-radius: 24px;
-          padding: 14px 18px;
+        .header-inner {
+          min-height: 72px;
         }
 
-        .brand-sub {
-          display: none;
-        }
+        .brand-sub { display: none; }
 
         .hero {
-          min-height: auto;
-          padding-bottom: 52px;
+          padding-top: 34px;
         }
 
-        .hero-actions,
-        .mini-stats,
-        .section-head,
-        .project-grid,
+        .hero-meta,
+        .services-grid,
+        .work-grid,
         .skills-grid,
-        .education-grid,
-        .profile-layout,
+        .mini-metrics,
         .contact-grid,
-        .profile-figure,
-        .work-grid {
+        .timeline-item {
           grid-template-columns: 1fr;
           display: grid;
         }
 
-        .timeline .job {
-          grid-template-columns: 1fr;
+        .section-head {
+          display: block;
         }
 
-        .hero h1 {
-          font-size: clamp(3.1rem, 18vw, 5rem);
+        .feature-card {
+          min-height: 540px;
         }
-
-        .cta { display: none; }
 
         .zip-content {
           grid-template-columns: 1fr;
@@ -1201,76 +1121,63 @@
         .zip-panel {
           height: min(760px, 86vh);
         }
-
-        .zip-visual {
-          min-height: 280px;
-        }
       }
     </style>
   </head>
   <body>
-    <header class="topbar">
-      <div class="topbar-inner wrap">
+    <header class="site-header">
+      <div class="wrap header-inner">
         <a class="brand" href="#top" aria-label="Naveed Ahmad home">
-          <span class="monogram">NA</span>
+          <span class="brand-mark">NA</span>
           <span>
-            <span class="brand-name">Naveed Ahmad</span>
-            <span class="brand-sub">Portfolio · Lahore, Pakistan</span>
+            <span class="brand-text">Naveed Ahmad</span>
+            <span class="brand-sub">Lahore, Pakistan</span>
           </span>
         </a>
 
         <nav class="nav" aria-label="Main navigation">
           <a href="#work">Work</a>
-          <a href="#profile">Profile</a>
+          <a href="#about">About</a>
           <a href="#experience">Experience</a>
-          <a href="#skills">Skills</a>
+          <a href="#services">Services</a>
           <a href="#contact">Contact</a>
         </nav>
 
-        <a class="cta" href="#contact">Let’s Talk</a>
+        <a class="header-cta" href="#contact">Let’s Talk</a>
       </div>
     </header>
 
     <main id="top">
-      <section class="hero wrap">
-        <div class="hero-copy">
-          <span class="eyebrow">Graphic Designer · Computer Educator</span>
-          <h1>
-            <span class="name-block">Naveed</span>
-            <span class="name-block accent">Ahmad</span>
-          </h1>
-          <p class="lead">
-            I design meaningful identities, digital experiences, and visual systems with a teaching mindset — blending creativity, strategic thinking, and clarity so brands feel premium, memorable, and easy to trust.
-          </p>
+      <section class="hero">
+        <div class="wrap hero-inner">
+          <div class="hero-copy">
+            <span class="eyebrow">Graphic designer · computer educator</span>
+            <h1>
+              Design that makes<br />
+              <span class="highlight">brands feel premium</span>
+            </h1>
+            <p>
+              I help businesses turn ideas into polished visual systems, digital experiences, and memorable brand stories. My focus is clarity, craftsmanship, and strategic design that feels refined without losing personality.
+            </p>
 
-          <div class="hero-actions">
-            <a class="button-primary" href="#work">View Portfolio</a>
-            <a class="button-secondary" href="#contact">Book a Project</a>
-          </div>
+            <div class="hero-actions">
+              <a class="btn primary" href="#work">View portfolio</a>
+              <a class="btn secondary" href="#contact">Book a project</a>
+            </div>
 
-          <div class="mini-stats" aria-label="Key statistics">
-            <div class="mini-stat">
-              <strong>7+</strong>
-              <span>Years Craft</span>
-            </div>
-            <div class="mini-stat">
-              <strong>40+</strong>
-              <span>Projects</span>
-            </div>
-            <div class="mini-stat">
-              <strong>12</strong>
-              <span>Brand Systems</span>
+            <div class="hero-meta">
+              <span class="meta-pill"><strong>Brand</strong> identity</span>
+              <span class="meta-pill"><strong>UI</strong> design</span>
+              <span class="meta-pill"><strong>Print</strong> + digital</span>
             </div>
           </div>
-        </div>
 
-        <div class="hero-visual" aria-label="Featured portfolio card">
-          <div class="showcase-shell">
-            <div class="showcase-card">
-              <div class="showcase-grid"></div>
-              <div class="showcase-body">
-                <div class="showcase-header">
-                  <span>Creative Portfolio</span>
+          <div class="hero-visual" aria-label="Featured work showcase">
+            <div class="feature-card">
+              <div class="feature-grid"></div>
+              <div class="feature-content">
+                <div class="feature-top">
+                  <span>Creative portfolio</span>
                   <div class="dot-row" aria-hidden="true">
                     <span class="dot"></span>
                     <span class="dot"></span>
@@ -1278,21 +1185,21 @@
                   </div>
                 </div>
 
-                <div class="showcase-brand">
+                <div class="feature-brand">
                   <strong>Naveed<br />Ahmad</strong>
-                  <p>Brand storytelling · print design · digital experiences</p>
-                  <div class="showcase-badges">
-                    <span>Luxury</span>
-                    <span>Strategy</span>
-                    <span>UI/UX</span>
+                  <p>Brand storytelling • design systems • digital creativity</p>
+                  <div class="badge-row">
+                    <span class="badge">Luxury</span>
+                    <span class="badge">Strategy</span>
+                    <span class="badge">Modern</span>
                   </div>
                 </div>
 
-                <div class="floating-panel">
+                <div class="feature-stat">
                   <span class="label">Selected</span>
                   <div class="meta">
-                    <strong>09</strong>
-                    <span>Case Studies</span>
+                    <strong>03</strong>
+                    <span>featured</span>
                   </div>
                 </div>
               </div>
@@ -1302,35 +1209,66 @@
         </div>
       </section>
 
+      <section class="section" id="services">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <span class="section-kicker">01 · Services</span>
+              <h2>Creative solutions built to feel premium.</h2>
+            </div>
+          </div>
+
+          <div class="services-grid">
+            <article class="service-card">
+              <div class="icon">✦</div>
+              <h3>Brand identity</h3>
+              <p>Logo systems, tone, palette direction, and visual language that make a business immediately recognizable.</p>
+            </article>
+
+            <article class="service-card">
+              <div class="icon">▣</div>
+              <h3>Digital design</h3>
+              <p>Web visuals, landing pages, campaign graphics, and conversion-focused interfaces shaped for clarity and impact.</p>
+            </article>
+
+            <article class="service-card">
+              <div class="icon">◫</div>
+              <h3>Print & editorial</h3>
+              <p>Brochures, branding layouts, and editorial compositions designed to look polished across physical and digital formats.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
       <section class="section" id="work">
         <div class="wrap">
           <div class="section-head">
             <div>
-              <span class="section-number">01 · Work</span>
-              <h2>Selected work</h2>
+              <span class="section-kicker">02 · Work</span>
+              <h2>Selected projects.</h2>
             </div>
             <a class="section-link" href="#contact">Start project</a>
           </div>
 
-          <div class="work-grid" aria-label="Portfolio work cards">
+          <div class="work-grid">
             <button class="project-card" type="button" data-project="maison">
               <div class="project-visual" data-title="Maison"></div>
               <div class="project-meta">
-                <span class="project-kicker">Brand Identity</span>
+                <span class="project-kicker">Brand identity</span>
                 <span class="project-tag">Luxury</span>
               </div>
               <h3>Maison Étoile</h3>
-              <p>High-end visual branding and premium social system for a boutique lifestyle label.</p>
+              <p>High-end identity and campaign work rooted in elegance, consistency, and premium storytelling.</p>
             </button>
 
             <button class="project-card" type="button" data-project="luma">
               <div class="project-visual" data-title="Luma"></div>
               <div class="project-meta">
-                <span class="project-kicker">Digital Launch</span>
+                <span class="project-kicker">Launch</span>
                 <span class="project-tag">Campaign</span>
               </div>
               <h3>Luma Atelier</h3>
-              <p>Campaign design and product storytelling that turned a quiet launch into a strong digital presence.</p>
+              <p>Visual direction for a product launch built around trust, clarity, and memorable digital presence.</p>
             </button>
 
             <button class="project-card" type="button" data-project="atlas">
@@ -1340,44 +1278,45 @@
                 <span class="project-tag">Print</span>
               </div>
               <h3>Atlas Journal</h3>
-              <p>Modern editorial direction built for clarity, elegance, and memorable reader experience.</p>
+              <p>Editorial layouts and brand storytelling designed to feel modern, elevated, and highly readable.</p>
             </button>
           </div>
         </div>
       </section>
 
-      <section class="section" id="profile">
-        <div class="wrap profile-layout">
-          <div class="profile-panel">
+      <section class="section" id="about">
+        <div class="wrap about-layout">
+          <div class="about-panel">
             <p class="quote">
-              “I help ideas feel premium, useful, and impossible to ignore.”
-              <small>Creative principle</small>
+              “Design is not just how something looks — it’s how it makes people feel.”
+              <small>Creative approach</small>
             </p>
 
-            <div class="profile-figure">
-              <div class="profile-box">
-                <strong>8+</strong>
-                <span>Brand launches</span>
+            <div class="mini-metrics">
+              <div class="mini-metric">
+                <strong>Based</strong>
+                <span>Lahore</span>
               </div>
-              <div class="profile-box">
-                <strong>100%</strong>
-                <span>Custom design</span>
+              <div class="mini-metric">
+                <strong>Remote</strong>
+                <span>Worldwide</span>
               </div>
             </div>
           </div>
 
-          <div class="profile-copy">
-            <div class="section-head" style="margin-bottom: 20px;">
+          <div class="about-copy">
+            <div class="section-head" style="margin-bottom: 18px;">
               <div>
-                <span class="section-number">02 · Profile</span>
-                <h2>Design with purpose</h2>
+                <span class="section-kicker">03 · About</span>
+                <h2>Creating work with intention.</h2>
               </div>
             </div>
+
             <p>
-              I’m a multi-disciplinary designer focused on visual identity, branding, and digital presence. My process blends aesthetic precision with communication strategy — so every composition not only looks refined but also helps a business connect with the right audience.
+              I’m Naveed Ahmad, a creative designer and computer educator helping brands and businesses shape clearer, more compelling visual communication. I combine design thinking with practical execution — whether that means brand direction, digital presentation, or educational materials.
             </p>
             <p>
-              From luxury brand systems to education-focused visuals and digital storytelling, I build work that is elegant, practical, and engaging across print, web, and social platforms.
+              My work focuses on elegance, structure, and relevance. Every design decision is made to improve trust, clarity, and customer connection while preserving a strong creative identity.
             </p>
           </div>
         </div>
@@ -1387,27 +1326,27 @@
         <div class="wrap">
           <div class="section-head">
             <div>
-              <span class="section-number">03 · Experience</span>
-              <h2>Professional journey</h2>
+              <span class="section-kicker">04 · Experience</span>
+              <h2>Professional journey.</h2>
             </div>
           </div>
 
-          <div class="timeline">
-            <article class="job">
-              <div class="job-year">2022 — Present</div>
-              <div>
-                <span class="company">Freelance Designer</span>
-                <h3>Brand, editorial and digital design</h3>
-                <p>Creating premium brand systems, product campaigns, and conversion-focused visuals for clients seeking modern, polished communication.</p>
+          <div class="experience-list">
+            <article class="timeline-item">
+              <div class="year">2022 — Present</div>
+              <div class="timeline-copy">
+                <span class="timeline-company">Freelance designer</span>
+                <h3>Creative direction & visual systems</h3>
+                <p>Working with clients on identities, content design, digital visuals, and polished communication materials for modern brands.</p>
               </div>
             </article>
 
-            <article class="job">
-              <div class="job-year">2017 — 2022</div>
-              <div>
-                <span class="company">Computer Educator</span>
-                <h3>Teaching digital tools and modern workflows</h3>
-                <p>Helping students and learners build confidence in design software, digital literacy, presentation tools, and creative productivity.</p>
+            <article class="timeline-item">
+              <div class="year">2017 — 2022</div>
+              <div class="timeline-copy">
+                <span class="timeline-company">Computer educator</span>
+                <h3>Teaching digital tools and creativity</h3>
+                <p>Helping students and learners build confidence in design software, digital skills, and professional presentation workflows.</p>
               </div>
             </article>
           </div>
@@ -1418,49 +1357,49 @@
         <div class="wrap">
           <div class="section-head">
             <div>
-              <span class="section-number">04 · Skills</span>
-              <h2>Creative toolkit</h2>
+              <span class="section-kicker">05 · Skills</span>
+              <h2>Creative toolkit.</h2>
             </div>
           </div>
 
           <div class="skills-grid">
             <article class="skill-card">
               <div class="skill-icon">✦</div>
-              <h3>Brand Identity</h3>
+              <h3>Brand identity</h3>
               <ul>
                 <li>Logo systems</li>
-                <li>Style guides</li>
-                <li>Brand direction</li>
+                <li>Brand guide</li>
+                <li>Creative direction</li>
               </ul>
             </article>
 
             <article class="skill-card">
               <div class="skill-icon">▣</div>
-              <h3>Digital Design</h3>
+              <h3>Digital design</h3>
               <ul>
                 <li>Landing pages</li>
                 <li>Campaign visuals</li>
-                <li>Web graphics</li>
+                <li>UI design</li>
               </ul>
             </article>
 
             <article class="skill-card">
               <div class="skill-icon">◫</div>
-              <h3>Print & Editorial</h3>
+              <h3>Print design</h3>
               <ul>
                 <li>Brochures</li>
-                <li>Catalogues</li>
-                <li>Creative layouts</li>
+                <li>Editorial layouts</li>
+                <li>Brand materials</li>
               </ul>
             </article>
 
             <article class="skill-card">
               <div class="skill-icon">◎</div>
-              <h3>Education Support</h3>
+              <h3>Education support</h3>
               <ul>
                 <li>Presentations</li>
-                <li>Learning assets</li>
-                <li>Teaching visuals</li>
+                <li>Learning visuals</li>
+                <li>Teaching assets</li>
               </ul>
             </article>
           </div>
@@ -1469,15 +1408,15 @@
 
       <section class="section" id="contact">
         <div class="wrap">
-          <div class="contact-wrapper">
+          <div class="contact-wrap">
             <div class="contact-grid">
               <div>
                 <span class="eyebrow" style="color: rgba(255,255,255,0.7);">Let’s build something memorable</span>
-                <h2>Ready to shape a stronger visual presence?</h2>
+                <h2>Ready for a clean, premium visual presence?</h2>
               </div>
 
-              <div class="contact-links">
-                <a class="contact-link" href="https://www.behance.net/proactivedesigners" target="_blank" rel="noreferrer">Behance Portfolio</a>
+              <div class="contact-list">
+                <a class="contact-link" href="https://www.behance.net/proactivedesigners" target="_blank" rel="noreferrer">Behance portfolio</a>
                 <a class="contact-link" href="mailto:hello@naveedahmad.design">hello@naveedahmad.design</a>
                 <a class="contact-link" href="#top">Back to top</a>
               </div>
@@ -1487,32 +1426,28 @@
       </section>
     </main>
 
-    <footer>
-      © Naveed Ahmad — Designed for clarity, craft, and impact.
-    </footer>
+    <footer>© Naveed Ahmad — Designed for clarity, craft, and impact.</footer>
 
     <div class="zip-overlay" id="zipOverlay" aria-hidden="true">
       <div class="zip-backdrop"></div>
-      <div class="zip-scene">
-        <div class="zip-panel" role="dialog" aria-modal="true">
-          <div class="zip-half left"></div>
-          <div class="zip-half right"></div>
+      <div class="zip-panel" role="dialog" aria-modal="true">
+        <div class="zip-half left"></div>
+        <div class="zip-half right"></div>
 
-          <div class="zip-content">
-            <div class="zip-copy">
-              <span class="eyebrow">Selected project</span>
-              <h3 id="projectTitle">Maison Étoile</h3>
-              <p id="projectText">High-end visual branding and premium social system for a boutique lifestyle label.</p>
-              <ul class="zip-list" id="projectList">
-                <li>Brand identity direction</li>
-                <li>Luxury campaign design</li>
-                <li>Social content system</li>
-              </ul>
-            </div>
+        <div class="zip-content">
+          <div class="zip-copy">
+            <span class="eyebrow">Selected project</span>
+            <h3 id="projectTitle">Maison Étoile</h3>
+            <p id="projectText">High-end visual branding and premium campaign direction focused on clarity and elegance.</p>
+            <ul class="zip-list" id="projectList">
+              <li>Brand identity direction</li>
+              <li>Luxury campaign design</li>
+              <li>Social content system</li>
+            </ul>
+          </div>
 
-            <div class="zip-visual" id="projectVisual" aria-hidden="true">
-              <div class="mini-screen"></div>
-            </div>
+          <div class="zip-visual" id="projectVisual" aria-hidden="true">
+            <div class="zip-screen"></div>
           </div>
         </div>
       </div>
@@ -1522,57 +1457,57 @@
       const projectData = {
         maison: {
           title: 'Maison Étoile',
-          text: 'High-end visual branding and premium social system for a boutique lifestyle label.',
+          text: 'High-end visual branding and premium campaign direction focused on clarity and elegance.',
           list: ['Brand identity direction', 'Luxury campaign design', 'Social content system'],
-          accent: 'linear-gradient(135deg, rgba(255,255,255,0.1), rgba(57,34,27,0.65))'
+          background: 'linear-gradient(135deg, rgba(255,255,255,0.09), rgba(57,34,27,0.7))'
         },
         luma: {
           title: 'Luma Atelier',
-          text: 'Campaign design and product storytelling that transformed a quiet launch into a premium digital presence.',
-          list: ['Launch campaign design', 'Product storytelling', 'Visual system rollout'],
-          accent: 'linear-gradient(135deg, rgba(255,255,255,0.12), rgba(25,43,38,0.68))'
+          text: 'Visual storytelling and launch design built to create trust, momentum, and a premium digital presence.',
+          list: ['Launch campaign concept', 'Product storytelling', 'Visual system rollout'],
+          background: 'linear-gradient(135deg, rgba(255,255,255,0.08), rgba(25,43,38,0.7))'
         },
         atlas: {
           title: 'Atlas Journal',
-          text: 'Modern editorial direction built for clarity, elegance, and an elevated reading experience.',
+          text: 'Editorial design with a strong hierarchy, refined typography, and a modern visual rhythm.',
           list: ['Editorial layout system', 'Print-ready compositions', 'Reader-focused hierarchy'],
-          accent: 'linear-gradient(135deg, rgba(255,255,255,0.12), rgba(49,60,68,0.7))'
+          background: 'linear-gradient(135deg, rgba(255,255,255,0.08), rgba(49,60,68,0.72))'
         }
       };
 
       const overlay = document.getElementById('zipOverlay');
-      const title = document.getElementById('projectTitle');
-      const text = document.getElementById('projectText');
-      const list = document.getElementById('projectList');
-      const visual = document.getElementById('projectVisual');
-      const cards = document.querySelectorAll('.project-card');
+      const projectTitle = document.getElementById('projectTitle');
+      const projectText = document.getElementById('projectText');
+      const projectList = document.getElementById('projectList');
+      const projectVisual = document.getElementById('projectVisual');
+      const projectCards = document.querySelectorAll('.project-card');
 
-      const openProject = (projectKey) => {
-        const project = projectData[projectKey];
+      function openProject(key) {
+        const project = projectData[key];
         if (!project) return;
 
-        title.textContent = project.title;
-        text.textContent = project.text;
-        list.innerHTML = project.list.map(item => `<li>${item}</li>`).join('');
-        visual.style.background = project.accent;
-        overlay.classList.add('is-open');
+        projectTitle.textContent = project.title;
+        projectText.textContent = project.text;
+        projectList.innerHTML = project.list.map(item => `<li>${item}</li>`).join('');
+        projectVisual.style.background = project.background;
+        overlay.classList.add('open');
         overlay.setAttribute('aria-hidden', 'false');
-      };
+      }
 
-      cards.forEach((card) => {
+      projectCards.forEach((card) => {
         card.addEventListener('click', () => openProject(card.dataset.project));
       });
 
       overlay.addEventListener('click', (event) => {
         if (event.target === overlay || event.target.classList.contains('zip-backdrop')) {
-          overlay.classList.remove('is-open');
+          overlay.classList.remove('open');
           overlay.setAttribute('aria-hidden', 'true');
         }
       });
 
       document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape' && overlay.classList.contains('is-open')) {
-          overlay.classList.remove('is-open');
+        if (event.key === 'Escape' && overlay.classList.contains('open')) {
+          overlay.classList.remove('open');
           overlay.setAttribute('aria-hidden', 'true');
         }
       });
