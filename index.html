@@ -12,17 +12,20 @@
       @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Cormorant+Garamond:wght@500;600;700&display=swap");
 
       :root {
-        --bg: #f5efe7;
-        --bg-2: #efe4d6;
-        --panel: rgba(255, 255, 255, 0.58);
-        --panel-strong: rgba(255, 255, 255, 0.76);
-        --ink: #1d1a1a;
-        --muted: #5f5854;
-        --line: rgba(58, 45, 37, 0.12);
-        --accent: #b14d36;
-        --accent-2: #8b5e42;
-        --gold: #d8b27a;
-        --shadow: 0 24px 70px rgba(31, 20, 14, 0.16);
+        --bg: #f3efe8;
+        --bg-strong: #140f0c;
+        --bg-soft: #efe4d6;
+        --panel: rgba(255,255,255,0.46);
+        --panel-strong: rgba(255,255,255,0.72);
+        --ink: #1a120f;
+        --muted: #665d56;
+        --line: rgba(26,18,15,0.09);
+        --accent: #8a4737;
+        --accent-2: #c8945b;
+        --gold: #d7b07a;
+        --gold-soft: #f1e2c5;
+        --shadow: 0 30px 80px rgba(31, 20, 14, 0.18);
+        --card-shadow: 0 18px 42px rgba(26,18,15,0.08);
         --radius-xl: 30px;
         --radius-lg: 22px;
         --radius-md: 16px;
@@ -30,19 +33,15 @@
       }
 
       * { box-sizing: border-box; }
-
-      html {
-        scroll-behavior: smooth;
-      }
-
+      html { scroll-behavior: smooth; }
       body {
         margin: 0;
         font-family: "Inter", Arial, sans-serif;
-        background:
-          radial-gradient(circle at top left, rgba(177,77,54,0.08), transparent 32%),
-          radial-gradient(circle at bottom right, rgba(176,127,82,0.10), transparent 25%),
-          linear-gradient(180deg, var(--bg) 0%, #f8f4ef 100%);
         color: var(--ink);
+        background:
+          radial-gradient(circle at top left, rgba(138,71,55,0.1), transparent 28%),
+          radial-gradient(circle at bottom right, rgba(215,176,122,0.12), transparent 26%),
+          linear-gradient(180deg, var(--bg) 0%, #f8f4ef 100%);
         line-height: 1.7;
         overflow-x: hidden;
       }
@@ -53,13 +52,14 @@
         inset: 0;
         background-image: linear-gradient(rgba(255,255,255,0.18) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.12) 1px, transparent 1px);
         background-size: 28px 28px;
-        mask-image: radial-gradient(circle at center, black 35%, transparent 100%);
+        mask-image: radial-gradient(circle at center, black 32%, transparent 100%);
         pointer-events: none;
         z-index: 0;
       }
 
       a { color: inherit; text-decoration: none; }
       img { max-width: 100%; display: block; }
+      button { font: inherit; }
 
       .wrap {
         width: var(--container);
@@ -71,15 +71,12 @@
       .topbar {
         position: sticky;
         top: 0;
-        z-index: 10;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 18px;
-        min-height: 90px;
+        z-index: 30;
         padding: 12px 0;
         backdrop-filter: blur(18px);
         -webkit-backdrop-filter: blur(18px);
+        background: rgba(243,239,232,0.54);
+        border-bottom: 1px solid rgba(26,18,15,0.04);
       }
 
       .topbar-inner {
@@ -90,10 +87,10 @@
         justify-content: space-between;
         gap: 20px;
         padding: 16px 22px;
-        background: rgba(251, 247, 242, 0.52);
-        border: 1px solid rgba(255,255,255,0.4);
+        background: rgba(255,255,255,0.34);
+        border: 1px solid rgba(255,255,255,0.68);
         border-radius: 999px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+        box-shadow: 0 10px 26px rgba(0,0,0,0.03);
       }
 
       .brand {
@@ -106,28 +103,28 @@
       }
 
       .monogram {
-        width: 42px;
-        height: 42px;
+        width: 44px;
+        height: 44px;
         display: grid;
         place-items: center;
         border-radius: 14px;
-        background: linear-gradient(135deg, #1f1a19, #4f403c);
+        background: linear-gradient(135deg, #180f0b, #574539);
         color: #fff;
-        font-size: 0.88rem;
-        box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), 0 12px 28px rgba(18,14,12,0.25);
+        font-size: 0.8rem;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), 0 14px 24px rgba(24,15,11,0.22);
         transform: rotate(-8deg);
       }
 
       .brand-name {
         display: block;
-        font-size: 0.77rem;
+        font-size: 0.76rem;
         letter-spacing: 0.12em;
       }
 
       .brand-sub {
         display: block;
-        font-size: 0.56rem;
-        letter-spacing: 0.22em;
+        font-size: 0.54rem;
+        letter-spacing: 0.18em;
         color: var(--muted);
       }
 
@@ -135,22 +132,22 @@
         display: flex;
         align-items: center;
         gap: 24px;
-        font-size: 0.73rem;
-        letter-spacing: 0.12em;
+        font-size: 0.7rem;
+        letter-spacing: 0.14em;
         text-transform: uppercase;
         color: var(--muted);
       }
 
       .nav a {
         position: relative;
-        padding-bottom: 2px;
+        padding-bottom: 3px;
       }
 
       .nav a::after {
         content: "";
         position: absolute;
         left: 0;
-        bottom: -2px;
+        bottom: 0;
         width: 100%;
         height: 2px;
         background: linear-gradient(90deg, var(--accent), transparent);
@@ -167,22 +164,22 @@
         align-items: center;
         justify-content: center;
         gap: 10px;
-        border: 1px solid rgba(255,255,255,0.4);
         border-radius: 999px;
-        background: linear-gradient(135deg, rgba(255,255,255,0.92), rgba(255,255,255,0.62));
+        background: linear-gradient(135deg, rgba(255,255,255,0.85), rgba(255,255,255,0.46));
+        border: 1px solid rgba(26,18,15,0.08);
         color: var(--ink);
         padding: 13px 22px;
-        font-size: 0.72rem;
+        font-size: 0.70rem;
         font-weight: 700;
         letter-spacing: 0.12em;
         text-transform: uppercase;
-        box-shadow: 0 18px 22px rgba(94, 70, 54, 0.08);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 20px 28px rgba(26,18,15,0.05);
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
       }
 
       .cta:hover {
         transform: translateY(-2px);
-        box-shadow: 0 18px 22px rgba(94, 70, 54, 0.12);
+        box-shadow: 0 18px 26px rgba(26,18,15,0.08);
       }
 
       main {
@@ -192,11 +189,15 @@
 
       .hero {
         display: grid;
-        grid-template-columns: 1.15fr 0.85fr;
+        grid-template-columns: 1.12fr 0.88fr;
         align-items: center;
-        gap: 38px;
-        min-height: 700px;
-        padding: 42px 0 90px;
+        gap: 42px;
+        min-height: 760px;
+        padding: 54px 0 80px;
+      }
+
+      .hero-copy {
+        position: relative;
       }
 
       .eyebrow {
@@ -212,10 +213,9 @@
       .hero h1 {
         margin: 0;
         font-size: clamp(4rem, 7vw, 7.3rem);
-        line-height: 0.95;
+        line-height: 0.92;
         letter-spacing: -0.07em;
         font-weight: 800;
-        text-transform: none;
       }
 
       .hero h1 .name-block {
@@ -235,15 +235,16 @@
         right: 0;
         bottom: 8px;
         height: 18px;
-        background: linear-gradient(90deg, rgba(177,77,54,0.18), transparent);
+        background: linear-gradient(90deg, rgba(138,71,55,0.14), rgba(215,176,122,0.12), transparent);
         z-index: -1;
       }
 
       .hero .lead {
-        max-width: 640px;
-        margin-top: 22px;
+        max-width: 650px;
+        margin-top: 24px;
         font-size: 1.14rem;
-        color: rgba(29,26,26,0.8);
+        line-height: 1.8;
+        color: rgba(26,18,15,0.8);
       }
 
       .hero-actions {
@@ -251,7 +252,7 @@
         flex-wrap: wrap;
         align-items: center;
         gap: 18px;
-        margin-top: 34px;
+        margin-top: 36px;
       }
 
       .button-primary,
@@ -270,14 +271,14 @@
       }
 
       .button-primary {
-        background: linear-gradient(135deg, var(--ink), #473d39);
+        background: linear-gradient(135deg, var(--ink), #40332d);
         color: white;
-        box-shadow: 0 18px 30px rgba(29,26,26,0.18);
+        box-shadow: 0 16px 28px rgba(26,18,15,0.18);
       }
 
       .button-secondary {
-        background: rgba(255,255,255,0.45);
-        border: 1px solid rgba(29,26,26,0.08);
+        background: rgba(255,255,255,0.52);
+        border: 1px solid rgba(26,18,15,0.08);
         color: var(--ink);
       }
 
@@ -298,7 +299,7 @@
         padding: 20px 18px;
         border: 1px solid var(--line);
         border-radius: 18px;
-        background: rgba(255,255,255,0.38);
+        background: rgba(255,255,255,0.42);
         box-shadow: 0 16px 28px rgba(32,22,18,0.04);
       }
 
@@ -321,66 +322,59 @@
         perspective: 1200px;
       }
 
-      .tilt-card {
+      .showcase-shell {
         position: relative;
-        padding: 22px;
-        border-radius: 32px;
-        background: linear-gradient(135deg, rgba(255,255,255,0.7), rgba(255,255,255,0.22));
-        border: 1px solid rgba(255,255,255,0.7);
+        padding: 20px;
+        border-radius: 34px;
+        background: linear-gradient(135deg, rgba(255,255,255,0.7), rgba(255,255,255,0.2));
+        border: 1px solid rgba(255,255,255,0.8);
         box-shadow: var(--shadow), inset 0 1px 0 rgba(255,255,255,0.7);
         transform-style: preserve-3d;
-        transition: transform 0.15s ease;
       }
 
-      .card-shell {
+      .showcase-card {
         position: relative;
-        min-height: 560px;
-        border-radius: 28px;
+        min-height: 600px;
+        border-radius: 30px;
         overflow: hidden;
-        background: linear-gradient(140deg, rgba(13,13,13,0.96), rgba(73,48,38,0.92));
-        transform: translateZ(42px);
+        background: linear-gradient(135deg, rgba(17,12,10,0.96), rgba(79,52,39,0.94));
+        transform: translateZ(30px);
       }
 
-      .card-shell::before {
+      .showcase-card::before {
         content: "";
         position: absolute;
         inset: 0;
         background:
-          linear-gradient(135deg, rgba(255,255,255,0.20), transparent 30%),
-          radial-gradient(circle at 75% 18%, rgba(216,178,122,0.55), transparent 22%),
-          radial-gradient(circle at 80% 82%, rgba(177,77,54,0.45), transparent 32%);
+          linear-gradient(135deg, rgba(255,255,255,0.14), transparent 28%),
+          radial-gradient(circle at 80% 18%, rgba(215,176,122,0.5), transparent 26%),
+          radial-gradient(circle at 72% 82%, rgba(138,71,55,0.42), transparent 26%);
       }
 
-      .card-bg {
+      .showcase-grid {
         position: absolute;
         inset: 0;
         background:
-          linear-gradient(135deg, rgba(255,255,255,0.12), transparent 40%),
-          repeating-linear-gradient(
-            135deg,
-            rgba(255,255,255,0.04) 0,
-            rgba(255,255,255,0.04) 1px,
-            transparent 1px,
-            transparent 10px
-          );
+          linear-gradient(135deg, rgba(255,255,255,0.08), transparent 40%),
+          repeating-linear-gradient(135deg, rgba(255,255,255,0.03) 0, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 12px);
       }
 
-      .portfolio-card {
+      .showcase-body {
         position: relative;
         z-index: 1;
-        padding: 30px;
-        height: 100%;
+        padding: 28px 26px 22px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        min-height: 100%;
         color: rgba(255,255,255,0.94);
       }
 
-      .portfolio-top {
+      .showcase-header {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        font-size: 0.68rem;
+        font-size: 0.66rem;
         font-weight: 700;
         letter-spacing: 0.14em;
         text-transform: uppercase;
@@ -396,37 +390,54 @@
         width: 10px;
         height: 10px;
         border-radius: 50%;
-        background: rgba(255,255,255,0.28);
+        background: rgba(255,255,255,0.26);
       }
 
       .dot:nth-child(1) { background: #f5d483; }
       .dot:nth-child(2) { background: #d18d75; }
       .dot:nth-child(3) { background: #8a8d92; }
 
-      .portfolio-identity {
-        margin-top: 30px;
+      .showcase-brand {
+        margin-top: 26px;
       }
 
-      .portfolio-identity strong {
+      .showcase-brand strong {
         display: block;
-        font-size: clamp(2.3rem, 3vw, 3.6rem);
-        letter-spacing: -0.06em;
+        font-size: clamp(2.5rem, 3vw, 3.5rem);
+        letter-spacing: -0.07em;
         line-height: 0.9;
         margin-bottom: 12px;
       }
 
-      .portfolio-identity p {
+      .showcase-brand p {
+        max-width: 300px;
         margin: 0;
-        max-width: 280px;
-        color: rgba(255,255,255,0.75);
-        font-size: 0.85rem;
-        letter-spacing: 0.08em;
+        color: rgba(255,255,255,0.7);
+        font-size: 0.8rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      .showcase-badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 18px;
+      }
+
+      .showcase-badges span {
+        border: 1px solid rgba(255,255,255,0.14);
+        background: rgba(255,255,255,0.08);
+        padding: 8px 12px;
+        border-radius: 999px;
+        font-size: 0.62rem;
+        letter-spacing: 0.14em;
         text-transform: uppercase;
       }
 
       .floating-panel {
         position: absolute;
-        right: -14px;
+        right: -12px;
         bottom: 28px;
         width: 246px;
         padding: 18px 18px 14px;
@@ -435,7 +446,7 @@
         border: 1px solid rgba(255,255,255,0.18);
         backdrop-filter: blur(10px);
         box-shadow: 0 20px 38px rgba(0,0,0,0.16);
-        transform: translateZ(60px) rotate(8deg);
+        transform: rotate(8deg) translateZ(40px);
       }
 
       .floating-panel .label {
@@ -460,7 +471,7 @@
       }
 
       .floating-panel span {
-        font-size: 0.72rem;
+        font-size: 0.7rem;
         letter-spacing: 0.14em;
         text-transform: uppercase;
         color: rgba(255,255,255,0.64);
@@ -472,15 +483,15 @@
         height: 220px;
         border-radius: 50%;
         filter: blur(6px);
-        background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.95), rgba(214,154,104,0.5) 18%, transparent 40%), rgba(255,255,255,0.05);
-        right: -36px;
-        top: 54px;
-        transform: translateZ(90px);
+        background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.96), rgba(215,176,122,0.54) 18%, transparent 40%), rgba(255,255,255,0.05);
+        right: -40px;
+        top: 44px;
+        transform: translateZ(50px);
         animation: floatOrb 7s ease-in-out infinite alternate;
       }
 
       .section {
-        padding: 74px 0;
+        padding: 70px 0;
       }
 
       .section-head {
@@ -509,12 +520,12 @@
 
       .section-link {
         font-size: 0.7rem;
-        letter-spacing: 0.14em;
+        letter-spacing: 0.12em;
         text-transform: uppercase;
         color: var(--muted);
       }
 
-      .project-grid {
+      .work-grid {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 24px;
@@ -522,17 +533,20 @@
 
       .project-card {
         position: relative;
+        width: 100%;
         padding: 18px;
+        border: 1px solid rgba(26,18,15,0.06);
         border-radius: var(--radius-xl);
-        background: rgba(255,255,255,0.36);
-        border: 1px solid rgba(29,26,26,0.07);
-        box-shadow: 0 24px 36px rgba(34,22,15,0.05);
+        background: rgba(255,255,255,0.38);
+        box-shadow: var(--card-shadow);
+        cursor: pointer;
+        text-align: left;
         transition: transform 0.35s ease, box-shadow 0.35s ease;
       }
 
       .project-card:hover {
         transform: translateY(-8px) rotateX(4deg);
-        box-shadow: 0 26px 46px rgba(34,22,15,0.08);
+        box-shadow: 0 28px 48px rgba(34,22,15,0.08);
       }
 
       .project-visual {
@@ -547,11 +561,13 @@
       .project-visual::before {
         content: attr(data-title);
         position: absolute;
-        inset: auto 18px 16px 18px;
+        left: 18px;
+        right: 18px;
+        bottom: 16px;
         font-weight: 800;
         font-size: clamp(1.8rem, 3vw, 2.6rem);
         letter-spacing: -0.06em;
-        color: rgba(255,255,255,0.92);
+        color: rgba(255,255,255,0.93);
       }
 
       .project-visual::after {
@@ -589,14 +605,14 @@
       }
 
       .project-tag {
-        border: 1px solid rgba(29,26,26,0.08);
+        border: 1px solid rgba(26,18,15,0.08);
         border-radius: 999px;
         padding: 8px 10px;
         font-size: 0.6rem;
         font-weight: 700;
         letter-spacing: 0.12em;
         text-transform: uppercase;
-        background: rgba(255,255,255,0.65);
+        background: rgba(255,255,255,0.68);
       }
 
       .project-card h3 {
@@ -635,7 +651,7 @@
         right: 30px;
         top: 20px;
         border-radius: 50%;
-        background: radial-gradient(circle at 30% 30%, rgba(177,77,54,0.22), transparent 60%);
+        background: radial-gradient(circle at 30% 30%, rgba(138,71,55,0.2), transparent 60%);
       }
 
       .profile-panel .quote {
@@ -763,7 +779,7 @@
         border-radius: 16px;
         margin-bottom: 18px;
         font-size: 1.3rem;
-        background: linear-gradient(135deg, rgba(177,77,54,0.14), rgba(216,178,122,0.14));
+        background: linear-gradient(135deg, rgba(138,71,55,0.12), rgba(215,176,122,0.14));
         box-shadow: inset 0 1px 0 rgba(255,255,255,0.35);
       }
 
@@ -839,7 +855,7 @@
         right: -50px;
         top: -50px;
         border-radius: 50%;
-        background: radial-gradient(circle, rgba(216,178,122,0.55), transparent 60%);
+        background: radial-gradient(circle, rgba(215,176,122,0.55), transparent 60%);
       }
 
       .contact-grid {
@@ -885,9 +901,237 @@
         text-transform: uppercase;
       }
 
+      .zip-overlay {
+        position: fixed;
+        inset: 0;
+        z-index: 60;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.35s ease;
+      }
+
+      .zip-overlay.is-open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .zip-backdrop {
+        position: absolute;
+        inset: 0;
+        background: rgba(14, 10, 8, 0.68);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+      }
+
+      .zip-scene {
+        position: absolute;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        padding: 4vw;
+      }
+
+      .zip-panel {
+        position: relative;
+        width: min(1100px, 100%);
+        height: min(700px, 82vh);
+        border-radius: 34px;
+        overflow: hidden;
+        background: linear-gradient(135deg, #120d0b, #342822 45%, #a86d4d 100%);
+        box-shadow: 0 30px 90px rgba(0,0,0,0.28);
+      }
+
+      .zip-panel::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(135deg, rgba(255,255,255,0.16), transparent 26%),
+          radial-gradient(circle at 80% 15%, rgba(215,176,122,0.38), transparent 26%),
+          radial-gradient(circle at 26% 70%, rgba(138,71,55,0.32), transparent 28%);
+      }
+
+      .zip-half {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 50%;
+        transition: transform 0.88s cubic-bezier(0.2, 0.8, 0.2, 1);
+        background: linear-gradient(135deg, rgba(255,255,255,0.06), rgba(0,0,0,0.18));
+      }
+
+      .zip-half.left {
+        left: 0;
+        border-right: 1px solid rgba(255,255,255,0.12);
+        transform: translateX(-105%);
+      }
+
+      .zip-half.right {
+        right: 0;
+        border-left: 1px solid rgba(255,255,255,0.12);
+        transform: translateX(105%);
+      }
+
+      .zip-overlay.is-open .zip-half.left {
+        transform: translateX(0);
+      }
+
+      .zip-overlay.is-open .zip-half.right {
+        transform: translateX(0);
+      }
+
+      .zip-half::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(90deg, rgba(255,255,255,0.12) 0, rgba(255,255,255,0.02) 30%, transparent 100%);
+      }
+
+      .zip-half.left::after,
+      .zip-half.right::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 14px;
+        background: repeating-linear-gradient(
+          to bottom,
+          rgba(255,255,255,0.22) 0,
+          rgba(255,255,255,0.22) 11px,
+          rgba(255,255,255,0.08) 11px,
+          rgba(255,255,255,0.08) 18px
+        );
+        box-shadow: 0 0 18px rgba(255,255,255,0.16);
+      }
+
+      .zip-half.left::after {
+        right: -7px;
+      }
+
+      .zip-half.right::after {
+        left: -7px;
+      }
+
+      .zip-content {
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        align-items: center;
+        padding: 48px;
+        opacity: 0;
+        transform: translateY(22px);
+        transition: opacity 0.45s ease 0.2s, transform 0.45s ease 0.2s;
+      }
+
+      .zip-overlay.is-open .zip-content {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .zip-copy {
+        color: rgba(255,255,255,0.94);
+      }
+
+      .zip-copy .eyebrow {
+        color: rgba(255,255,255,0.72);
+      }
+
+      .zip-copy h3 {
+        margin: 0 0 16px;
+        font-size: clamp(2.8rem, 5vw, 5rem);
+        letter-spacing: -0.06em;
+        line-height: 0.9;
+      }
+
+      .zip-copy p {
+        margin: 0 0 20px;
+        max-width: 500px;
+        color: rgba(255,255,255,0.76);
+        font-size: 1.05rem;
+      }
+
+      .zip-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        gap: 10px;
+        color: rgba(255,255,255,0.8);
+      }
+
+      .zip-list li::before {
+        content: "•";
+        color: var(--gold);
+        margin-right: 10px;
+      }
+
+      .zip-visual {
+        position: relative;
+        min-height: 520px;
+        border-radius: 28px;
+        overflow: hidden;
+        background: linear-gradient(135deg, rgba(15,11,10,0.7), rgba(77,52,46,0.8));
+        border: 1px solid rgba(255,255,255,0.12);
+        box-shadow: 0 20px 42px rgba(0,0,0,0.25);
+      }
+
+      .zip-visual::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(circle at 25% 18%, rgba(255,206,154,0.48), transparent 18%),
+          radial-gradient(circle at 75% 52%, rgba(146,103,81,0.35), transparent 24%),
+          linear-gradient(135deg, rgba(255,255,255,0.1), transparent 30%);
+      }
+
+      .zip-visual::after {
+        content: "";
+        position: absolute;
+        inset: 20px 18px 18px 18px;
+        border-radius: 22px;
+        border: 1px solid rgba(255,255,255,0.14);
+        background: rgba(255,255,255,0.04);
+      }
+
+      .zip-visual .mini-screen {
+        position: absolute;
+        left: 32px;
+        right: 32px;
+        bottom: 32px;
+        height: 170px;
+        border-radius: 20px;
+        background: linear-gradient(135deg, rgba(20,15,12,0.82), rgba(45,34,28,0.82));
+        border: 1px solid rgba(255,255,255,0.12);
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+      }
+
+      .zip-visual .mini-screen::before {
+        content: "";
+        position: absolute;
+        inset: 22px 20px 56px;
+        border-radius: 12px;
+        background: linear-gradient(90deg, rgba(215,176,122,0.9), rgba(138,71,55,0.8));
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.28);
+      }
+
+      .zip-visual .mini-screen::after {
+        content: "";
+        position: absolute;
+        left: 20px;
+        right: 20px;
+        bottom: 18px;
+        height: 26px;
+        border-radius: 10px;
+        background: rgba(255,255,255,0.06);
+      }
+
       @keyframes floatOrb {
-        0% { transform: translate3d(0, 0, 90px) scale(0.96); }
-        100% { transform: translate3d(8px, -18px, 110px) scale(1.05); }
+        0% { transform: translate3d(0, 0, 50px) scale(0.96); }
+        100% { transform: translate3d(8px, -18px, 70px) scale(1.05); }
       }
 
       @media (max-width: 980px) {
@@ -900,7 +1144,8 @@
         .skills-grid,
         .education-grid,
         .profile-layout,
-        .contact-grid {
+        .contact-grid,
+        .work-grid {
           grid-template-columns: 1fr 1fr;
         }
 
@@ -932,7 +1177,8 @@
         .education-grid,
         .profile-layout,
         .contact-grid,
-        .profile-figure {
+        .profile-figure,
+        .work-grid {
           grid-template-columns: 1fr;
           display: grid;
         }
@@ -945,15 +1191,20 @@
           font-size: clamp(3.1rem, 18vw, 5rem);
         }
 
-        .project-grid,
-        .skills-grid,
-        .education-grid,
-        .profile-layout,
-        .contact-grid {
-          display: grid;
+        .cta { display: none; }
+
+        .zip-content {
+          grid-template-columns: 1fr;
+          padding: 28px 22px;
         }
 
-        .cta { display: none; }
+        .zip-panel {
+          height: min(760px, 86vh);
+        }
+
+        .zip-visual {
+          min-height: 280px;
+        }
       }
     </style>
   </head>
@@ -982,14 +1233,14 @@
 
     <main id="top">
       <section class="hero wrap">
-        <div>
+        <div class="hero-copy">
           <span class="eyebrow">Graphic Designer · Computer Educator</span>
           <h1>
             <span class="name-block">Naveed</span>
             <span class="name-block accent">Ahmad</span>
           </h1>
           <p class="lead">
-            I design meaningful identities, digital experiences, and visual systems with a strong teaching mindset — blending creativity, clarity, and modern strategy to help brands and people stand out.
+            I design meaningful identities, digital experiences, and visual systems with a teaching mindset — blending creativity, strategic thinking, and clarity so brands feel premium, memorable, and easy to trust.
           </p>
 
           <div class="hero-actions">
@@ -999,29 +1250,27 @@
 
           <div class="mini-stats" aria-label="Key statistics">
             <div class="mini-stat">
-              <strong>19+</strong>
-              <span>Years Experience</span>
+              <strong>7+</strong>
+              <span>Years Craft</span>
             </div>
             <div class="mini-stat">
-              <strong>120+</strong>
-              <span>Design Projects</span>
+              <strong>40+</strong>
+              <span>Projects</span>
             </div>
             <div class="mini-stat">
-              <strong>1000+</strong>
-              <span>Students Taught</span>
+              <strong>12</strong>
+              <span>Brand Systems</span>
             </div>
           </div>
         </div>
 
-        <div class="hero-visual" aria-label="Portfolio visual showcase">
-          <div class="tilt-card" data-tilt>
-            <div class="card-shell">
-              <div class="card-bg"></div>
-              <div class="orb"></div>
-
-              <div class="portfolio-card">
-                <div class="portfolio-top">
-                  <span>Creative Studio</span>
+        <div class="hero-visual" aria-label="Featured portfolio card">
+          <div class="showcase-shell">
+            <div class="showcase-card">
+              <div class="showcase-grid"></div>
+              <div class="showcase-body">
+                <div class="showcase-header">
+                  <span>Creative Portfolio</span>
                   <div class="dot-row" aria-hidden="true">
                     <span class="dot"></span>
                     <span class="dot"></span>
@@ -1029,258 +1278,303 @@
                   </div>
                 </div>
 
-                <div class="portfolio-identity">
-                  <strong>Design<br />with clarity</strong>
-                  <p>Brand identity • Social media • Learning systems</p>
+                <div class="showcase-brand">
+                  <strong>Naveed<br />Ahmad</strong>
+                  <p>Brand storytelling · print design · digital experiences</p>
+                  <div class="showcase-badges">
+                    <span>Luxury</span>
+                    <span>Strategy</span>
+                    <span>UI/UX</span>
+                  </div>
                 </div>
 
                 <div class="floating-panel">
-                  <span class="label">Current focus</span>
+                  <span class="label">Selected</span>
                   <div class="meta">
-                    <strong>02</strong>
-                    <span>Featured</span>
+                    <strong>09</strong>
+                    <span>Case Studies</span>
                   </div>
                 </div>
               </div>
             </div>
+            <div class="orb" aria-hidden="true"></div>
           </div>
         </div>
       </section>
 
-      <section class="section wrap" id="work">
-        <div class="section-head">
-          <div>
-            <span class="section-number">Selected work · Behance</span>
-            <h2>Selected work</h2>
+      <section class="section" id="work">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <span class="section-number">01 · Work</span>
+              <h2>Selected work</h2>
+            </div>
+            <a class="section-link" href="#contact">Start project</a>
           </div>
-          <a class="section-link" href="https://www.behance.net/naveedahmad" target="_blank" rel="noreferrer">View All</a>
-        </div>
 
-        <div class="project-grid">
-          <article class="project-card">
-            <div class="project-visual" data-title="Etihad Rail"></div>
-            <div class="project-meta">
-              <span class="project-kicker">Brand identity</span>
-              <span class="project-tag">Logo</span>
-            </div>
-            <h3>Etihad Rail</h3>
-            <p>Identity and visual direction developed for a high-impact transport initiative.</p>
-          </article>
+          <div class="work-grid" aria-label="Portfolio work cards">
+            <button class="project-card" type="button" data-project="maison">
+              <div class="project-visual" data-title="Maison"></div>
+              <div class="project-meta">
+                <span class="project-kicker">Brand Identity</span>
+                <span class="project-tag">Luxury</span>
+              </div>
+              <h3>Maison Étoile</h3>
+              <p>High-end visual branding and premium social system for a boutique lifestyle label.</p>
+            </button>
 
-          <article class="project-card">
-            <div class="project-visual" data-title="Sajjad"></div>
-            <div class="project-meta">
-              <span class="project-kicker">Campaign design</span>
-              <span class="project-tag">Social</span>
-            </div>
-            <h3>Social Campaigns</h3>
-            <p>Strategic graphics designed to improve engagement and brand storytelling online.</p>
-          </article>
+            <button class="project-card" type="button" data-project="luma">
+              <div class="project-visual" data-title="Luma"></div>
+              <div class="project-meta">
+                <span class="project-kicker">Digital Launch</span>
+                <span class="project-tag">Campaign</span>
+              </div>
+              <h3>Luma Atelier</h3>
+              <p>Campaign design and product storytelling that turned a quiet launch into a strong digital presence.</p>
+            </button>
 
-          <article class="project-card">
-            <div class="project-visual" data-title="Case Study"></div>
-            <div class="project-meta">
-              <span class="project-kicker">Creative direction</span>
-              <span class="project-tag">UI/UX</span>
-            </div>
-            <h3>Digital Concepts</h3>
-            <p>Creative systems built for recognition, clarity, and modern presentation styles.</p>
-          </article>
+            <button class="project-card" type="button" data-project="atlas">
+              <div class="project-visual" data-title="Atlas"></div>
+              <div class="project-meta">
+                <span class="project-kicker">Editorial</span>
+                <span class="project-tag">Print</span>
+              </div>
+              <h3>Atlas Journal</h3>
+              <p>Modern editorial direction built for clarity, elegance, and memorable reader experience.</p>
+            </button>
+          </div>
         </div>
       </section>
 
-      <section class="section wrap" id="profile">
-        <div class="section-head">
-          <div>
-            <span class="section-number">01 · Profile</span>
-            <h2>Design with purpose.<br />Teach with clarity.</h2>
-          </div>
-        </div>
-
-        <div class="profile-layout">
+      <section class="section" id="profile">
+        <div class="wrap profile-layout">
           <div class="profile-panel">
-            <p class="quote">“I build visual systems that help people understand, trust, and remember.”<small>In practice</small></p>
+            <p class="quote">
+              “I help ideas feel premium, useful, and impossible to ignore.”
+              <small>Creative principle</small>
+            </p>
 
             <div class="profile-figure">
               <div class="profile-box">
-                <strong>19</strong>
-                <span>Years of creative work</span>
+                <strong>8+</strong>
+                <span>Brand launches</span>
               </div>
               <div class="profile-box">
-                <strong>12+</strong>
-                <span>Creative disciplines</span>
+                <strong>100%</strong>
+                <span>Custom design</span>
               </div>
             </div>
           </div>
 
           <div class="profile-copy">
+            <div class="section-head" style="margin-bottom: 20px;">
+              <div>
+                <span class="section-number">02 · Profile</span>
+                <h2>Design with purpose</h2>
+              </div>
+            </div>
             <p>
-              With nearly two decades of combined experience in graphic design and computer education, I help individuals, teams, and businesses communicate more effectively through clean visual thinking and smart digital practice.
+              I’m a multi-disciplinary designer focused on visual identity, branding, and digital presence. My process blends aesthetic precision with communication strategy — so every composition not only looks refined but also helps a business connect with the right audience.
             </p>
             <p>
-              My work bridges the gap between aesthetic quality and practical communication — from branding, marketing visuals, and digital design to mentoring learners in software, digital tools, and essential computer skills.
+              From luxury brand systems to education-focused visuals and digital storytelling, I build work that is elegant, practical, and engaging across print, web, and social platforms.
             </p>
           </div>
         </div>
       </section>
 
-      <section class="section wrap" id="experience">
-        <div class="section-head">
-          <div>
-            <span class="section-number">02 · Experience</span>
-            <h2>Experience</h2>
+      <section class="section" id="experience">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <span class="section-number">03 · Experience</span>
+              <h2>Professional journey</h2>
+            </div>
           </div>
-        </div>
 
-        <div class="timeline">
-          <article class="job">
-            <div class="job-year">2019 — present</div>
-            <div>
-              <h3>Independent Graphic Designer & Educator</h3>
-              <span class="company">Lahore, Pakistan</span>
-              <p>Designing branding, social media assets, print materials, and digital communication systems while teaching modern computer literacy and design workflows.</p>
-            </div>
-          </article>
+          <div class="timeline">
+            <article class="job">
+              <div class="job-year">2022 — Present</div>
+              <div>
+                <span class="company">Freelance Designer</span>
+                <h3>Brand, editorial and digital design</h3>
+                <p>Creating premium brand systems, product campaigns, and conversion-focused visuals for clients seeking modern, polished communication.</p>
+              </div>
+            </article>
 
-          <article class="job">
-            <div class="job-year">2010 — 2019</div>
-            <div>
-              <h3>Creative & Technical Instructor</h3>
-              <span class="company">Education & Training</span>
-              <p>Delivered hands-on training in design tools, visual communication, and computer fundamentals with a strong focus on student growth and practical application.</p>
-            </div>
-          </article>
-
-          <article class="job">
-            <div class="job-year">2006 — 2010</div>
-            <div>
-              <h3>Design & Visual Communication</h3>
-              <span class="company">Freelance & Studio Work</span>
-              <p>Produced thoughtful visual communication pieces for businesses and individuals, helping them present a stronger and more professional image.</p>
-            </div>
-          </article>
+            <article class="job">
+              <div class="job-year">2017 — 2022</div>
+              <div>
+                <span class="company">Computer Educator</span>
+                <h3>Teaching digital tools and modern workflows</h3>
+                <p>Helping students and learners build confidence in design software, digital literacy, presentation tools, and creative productivity.</p>
+              </div>
+            </article>
+          </div>
         </div>
       </section>
 
-      <section class="section wrap" id="skills">
-        <div class="section-head">
-          <div>
-            <span class="section-number">03 · Skills</span>
-            <h2>Skills & credentials</h2>
-          </div>
-        </div>
-
-        <div class="skills-grid">
-          <article class="skill-card">
-            <div class="skill-icon">✦</div>
-            <h3>Design</h3>
-            <ul>
-              <li>Brand Identity</li>
-              <li>Poster Design</li>
-              <li>Social Media</li>
-              <li>Print Layout</li>
-            </ul>
-          </article>
-
-          <article class="skill-card">
-            <div class="skill-icon">◈</div>
-            <h3>Creative Tech</h3>
-            <ul>
-              <li>Adobe Photoshop</li>
-              <li>Illustrator</li>
-              <li>InDesign</li>
-              <li>Canva</li>
-            </ul>
-          </article>
-
-          <article class="skill-card">
-            <div class="skill-icon">▣</div>
-            <h3>Education</h3>
-            <ul>
-              <li>Computer Basics</li>
-              <li>MS Office</li>
-              <li>Digital Skills</li>
-              <li>Training</li>
-            </ul>
-          </article>
-
-          <article class="skill-card">
-            <div class="skill-icon">◎</div>
-            <h3>Approach</h3>
-            <ul>
-              <li>Strategy</li>
-              <li>Clarity</li>
-              <li>Precision</li>
-              <li>Modern Thinking</li>
-            </ul>
-          </article>
-        </div>
-      </section>
-
-      <section class="section wrap" id="education">
-        <div class="section-head">
-          <div>
-            <span class="section-number">04 · Education</span>
-            <h2>Education</h2>
-          </div>
-        </div>
-
-        <div class="education-grid">
-          <article class="edu-card">
-            <span class="degree">Academic</span>
-            <h3>B.A.</h3>
-            <p>Completed with a foundation in arts, communication, and broader academic development.</p>
-          </article>
-
-          <article class="edu-card">
-            <span class="degree">Learning Journey</span>
-            <h3>Self-driven growth</h3>
-            <p>Continuous improvement through practical learning, teaching, and creative experimentation.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section wrap" id="contact">
-        <div class="contact-wrapper">
-          <div class="contact-grid">
+      <section class="section" id="skills">
+        <div class="wrap">
+          <div class="section-head">
             <div>
-              <span class="section-number" style="color: rgba(255,255,255,0.7);">05 · Contact</span>
-              <h2>Let’s work together.</h2>
+              <span class="section-number">04 · Skills</span>
+              <h2>Creative toolkit</h2>
             </div>
+          </div>
 
-            <div class="contact-links">
-              <a class="contact-link" href="mailto:naveedahmad.graphic@gmail.com">Email · naveedahmad.graphic@gmail.com</a>
-              <a class="contact-link" href="https://www.behance.net/naveedahmad" target="_blank" rel="noreferrer">Behance · Portfolio</a>
-              <a class="contact-link" href="https://wa.me/923001234567" target="_blank" rel="noreferrer">WhatsApp · Quick chat</a>
+          <div class="skills-grid">
+            <article class="skill-card">
+              <div class="skill-icon">✦</div>
+              <h3>Brand Identity</h3>
+              <ul>
+                <li>Logo systems</li>
+                <li>Style guides</li>
+                <li>Brand direction</li>
+              </ul>
+            </article>
+
+            <article class="skill-card">
+              <div class="skill-icon">▣</div>
+              <h3>Digital Design</h3>
+              <ul>
+                <li>Landing pages</li>
+                <li>Campaign visuals</li>
+                <li>Web graphics</li>
+              </ul>
+            </article>
+
+            <article class="skill-card">
+              <div class="skill-icon">◫</div>
+              <h3>Print & Editorial</h3>
+              <ul>
+                <li>Brochures</li>
+                <li>Catalogues</li>
+                <li>Creative layouts</li>
+              </ul>
+            </article>
+
+            <article class="skill-card">
+              <div class="skill-icon">◎</div>
+              <h3>Education Support</h3>
+              <ul>
+                <li>Presentations</li>
+                <li>Learning assets</li>
+                <li>Teaching visuals</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="contact">
+        <div class="wrap">
+          <div class="contact-wrapper">
+            <div class="contact-grid">
+              <div>
+                <span class="eyebrow" style="color: rgba(255,255,255,0.7);">Let’s build something memorable</span>
+                <h2>Ready to shape a stronger visual presence?</h2>
+              </div>
+
+              <div class="contact-links">
+                <a class="contact-link" href="https://www.behance.net/proactivedesigners" target="_blank" rel="noreferrer">Behance Portfolio</a>
+                <a class="contact-link" href="mailto:hello@naveedahmad.design">hello@naveedahmad.design</a>
+                <a class="contact-link" href="#top">Back to top</a>
+              </div>
             </div>
           </div>
         </div>
       </section>
     </main>
 
-    <footer class="wrap">
-      © 2025 Naveed Ahmad — Creative Designer & Computer Educator
+    <footer>
+      © Naveed Ahmad — Designed for clarity, craft, and impact.
     </footer>
 
+    <div class="zip-overlay" id="zipOverlay" aria-hidden="true">
+      <div class="zip-backdrop"></div>
+      <div class="zip-scene">
+        <div class="zip-panel" role="dialog" aria-modal="true">
+          <div class="zip-half left"></div>
+          <div class="zip-half right"></div>
+
+          <div class="zip-content">
+            <div class="zip-copy">
+              <span class="eyebrow">Selected project</span>
+              <h3 id="projectTitle">Maison Étoile</h3>
+              <p id="projectText">High-end visual branding and premium social system for a boutique lifestyle label.</p>
+              <ul class="zip-list" id="projectList">
+                <li>Brand identity direction</li>
+                <li>Luxury campaign design</li>
+                <li>Social content system</li>
+              </ul>
+            </div>
+
+            <div class="zip-visual" id="projectVisual" aria-hidden="true">
+              <div class="mini-screen"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script>
-      const tiltCards = document.querySelectorAll('[data-tilt]');
+      const projectData = {
+        maison: {
+          title: 'Maison Étoile',
+          text: 'High-end visual branding and premium social system for a boutique lifestyle label.',
+          list: ['Brand identity direction', 'Luxury campaign design', 'Social content system'],
+          accent: 'linear-gradient(135deg, rgba(255,255,255,0.1), rgba(57,34,27,0.65))'
+        },
+        luma: {
+          title: 'Luma Atelier',
+          text: 'Campaign design and product storytelling that transformed a quiet launch into a premium digital presence.',
+          list: ['Launch campaign design', 'Product storytelling', 'Visual system rollout'],
+          accent: 'linear-gradient(135deg, rgba(255,255,255,0.12), rgba(25,43,38,0.68))'
+        },
+        atlas: {
+          title: 'Atlas Journal',
+          text: 'Modern editorial direction built for clarity, elegance, and an elevated reading experience.',
+          list: ['Editorial layout system', 'Print-ready compositions', 'Reader-focused hierarchy'],
+          accent: 'linear-gradient(135deg, rgba(255,255,255,0.12), rgba(49,60,68,0.7))'
+        }
+      };
 
-      tiltCards.forEach((card) => {
-        const handleMove = (event) => {
-          const rect = card.getBoundingClientRect();
-          const x = event.clientX - rect.left;
-          const y = event.clientY - rect.top;
-          const rotateY = ((x / rect.width) - 0.5) * 16;
-          const rotateX = (0.5 - (y / rect.height)) * 16;
-          card.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
-        };
+      const overlay = document.getElementById('zipOverlay');
+      const title = document.getElementById('projectTitle');
+      const text = document.getElementById('projectText');
+      const list = document.getElementById('projectList');
+      const visual = document.getElementById('projectVisual');
+      const cards = document.querySelectorAll('.project-card');
 
-        const reset = () => {
-          card.style.transform = 'perspective(1200px) rotateX(0deg) rotateY(0deg) translateY(0px)';
-        };
+      const openProject = (projectKey) => {
+        const project = projectData[projectKey];
+        if (!project) return;
 
-        card.addEventListener('mousemove', handleMove);
-        card.addEventListener('mouseleave', reset);
+        title.textContent = project.title;
+        text.textContent = project.text;
+        list.innerHTML = project.list.map(item => `<li>${item}</li>`).join('');
+        visual.style.background = project.accent;
+        overlay.classList.add('is-open');
+        overlay.setAttribute('aria-hidden', 'false');
+      };
+
+      cards.forEach((card) => {
+        card.addEventListener('click', () => openProject(card.dataset.project));
+      });
+
+      overlay.addEventListener('click', (event) => {
+        if (event.target === overlay || event.target.classList.contains('zip-backdrop')) {
+          overlay.classList.remove('is-open');
+          overlay.setAttribute('aria-hidden', 'true');
+        }
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && overlay.classList.contains('is-open')) {
+          overlay.classList.remove('is-open');
+          overlay.setAttribute('aria-hidden', 'true');
+        }
       });
     </script>
   </body>
